@@ -1,0 +1,6 @@
+node_modules/
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+cypress/fixtures/credentials.json
+docs/massa-de-teste.md

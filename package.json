@@ -1,0 +1,27 @@
+{
+  "name": "weparty-automation",
+  "version": "1.0.0",
+  "description": "Testes automatizados E2E do WeParty com Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:login": "cypress run --spec \"cypress/e2e/login.cy.js\"",
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/we-tech-git/weparty-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/we-tech-git/weparty-automation/issues"
+  },
+  "homepage": "https://github.com/we-tech-git/weparty-automation#readme",
+  "devDependencies": {
+    "cypress": "^15.20.0"
+  }
+}
