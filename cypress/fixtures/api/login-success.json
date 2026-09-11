@@ -1,0 +1,16 @@
+{
+  "success": true,
+  "message": "Login realizado",
+  "data": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.mock",
+    "user": {
+      "uid": "12345",
+      "username": "leonidas",
+      "name": "Leonidas",
+      "email": "",
+      "photoURL": "",
+      "birthday": null,
+      "gender": ""
+    }
+  }
+}
