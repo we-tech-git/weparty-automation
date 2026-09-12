@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Like atualizado",
+  "data": {
+    "isLiked": true,
+    "likesCount": 6
+  }
+}

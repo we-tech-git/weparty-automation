@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "message": "Eventos recomendados",
+  "data": {
+    "events": [
+      {
+        "id": "evt-e2e-001",
+        "name": "Baile de Teste E2E",
+        "description": "Evento fixo usado pelos testes automatizados do FeedCard.",
+        "date": "2099-12-31T23:00:00.000Z",
+        "location": "São Paulo, SP",
+        "organizer": {
+          "id": "host-e2e-001",
+          "name": "Anfitriã Teste",
+          "avatar": ""
+        },
+        "confirmedCount": 12,
+        "interestedCount": 34,
+        "likesCount": 5,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-e2e-002",
+        "name": "Show de Teste E2E 2",
+        "description": "Evento de preenchimento — mantém o feed acima do mínimo que dispara o fallback público em Feed.vue (MIN_EVENTS).",
+        "date": "2099-12-31T23:05:00.000Z",
+        "location": "Rio de Janeiro, RJ",
+        "organizer": { "id": "host-e2e-002", "name": "Anfitriã Teste 2", "avatar": "" },
+        "confirmedCount": 3,
+        "interestedCount": 8,
+        "likesCount": 1,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-e2e-003",
+        "name": "Feira de Teste E2E 3",
+        "description": "Evento de preenchimento — mantém o feed acima do mínimo que dispara o fallback público em Feed.vue (MIN_EVENTS).",
+        "date": "2099-12-31T23:10:00.000Z",
+        "location": "Belo Horizonte, MG",
+        "organizer": { "id": "host-e2e-003", "name": "Anfitriã Teste 3", "avatar": "" },
+        "confirmedCount": 3,
+        "interestedCount": 8,
+        "likesCount": 1,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-e2e-004",
+        "name": "Encontro de Teste E2E 4",
+        "description": "Evento de preenchimento — mantém o feed acima do mínimo que dispara o fallback público em Feed.vue (MIN_EVENTS).",
+        "date": "2099-12-31T23:15:00.000Z",
+        "location": "Curitiba, PR",
+        "organizer": { "id": "host-e2e-004", "name": "Anfitriã Teste 4", "avatar": "" },
+        "confirmedCount": 3,
+        "interestedCount": 8,
+        "likesCount": 1,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-e2e-005",
+        "name": "Festival de Teste E2E 5",
+        "description": "Evento de preenchimento — mantém o feed acima do mínimo que dispara o fallback público em Feed.vue (MIN_EVENTS).",
+        "date": "2099-12-31T23:20:00.000Z",
+        "location": "Porto Alegre, RS",
+        "organizer": { "id": "host-e2e-005", "name": "Anfitriã Teste 5", "avatar": "" },
+        "confirmedCount": 3,
+        "interestedCount": 8,
+        "likesCount": 1,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      }
+    ]
+  }
+}
