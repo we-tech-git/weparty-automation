@@ -4,11 +4,17 @@
   "description": "Testes automatizados E2E do WeParty com Cypress",
   "main": "index.js",
   "scripts": {
+    "pretest": "node -e \"require('fs').rmSync('cypress/reports', {recursive:true, force:true})\"",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:login": "cypress run --spec \"cypress/e2e/public/login.cy.js\"",
     "cy:run:feed": "cypress run --spec \"cypress/e2e/private/feed.cy.js\"",
-    "test": "cypress run"
+    "cy:run:signup": "cypress run --spec \"cypress/e2e/signup.cy.js\"",
+    "test": "cypress run",
+    "report:merge": "mochawesome-merge cypress/reports/*.json -o cypress/reports/merged-report.json",
+    "report:generate": "marge cypress/reports/merged-report.json -o cypress/reports -f report",
+    "report": "npm run report:merge && npm run report:generate",
+    "test:report": "npm run test && npm run report"
   },
   "repository": {
     "type": "git",
@@ -23,6 +29,9 @@
   },
   "homepage": "https://github.com/we-tech-git/weparty-automation#readme",
   "devDependencies": {
-    "cypress": "^15.20.0"
+    "cypress": "^15.20.0",
+    "mochawesome": "^8.1.1",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }
