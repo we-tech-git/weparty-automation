@@ -1,7 +1,7 @@
 import { ROUTES } from '../constants/routes'
 import { LOGIN_FORM_VISIBLE_TIMEOUT, LOGIN_REDIRECT_TIMEOUT } from '../constants/timeouts'
 
-// Page Object da tela de Login (`/public/Login`). Concentra os seletores e
+// Page Object da tela de Login (`/login`). Concentra os seletores e
 // ações da tela — nenhum cy.get de Login deve existir fora daqui.
 // Ver docs/arquitetura-e-organizacao.md.
 class LoginPage {
