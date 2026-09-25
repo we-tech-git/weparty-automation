@@ -68,11 +68,17 @@ class FeedCardPage {
   }
 
   // ShareSheet.vue (mockada via useShareStore) não tem data-testid — mesmo
-  // caso do painel de comentários, cai no texto visível do diálogo. O
-  // título do evento já é suficiente para garantir que é o card certo.
+  // caso do painel de comentários, cai no texto visível do diálogo. Um
+  // `cy.contains(eventTitle)` solto é ambíguo: o próprio FeedCard por trás
+  // do diálogo tem um `<h3 class="title">` com o mesmo texto do evento, e
+  // ele vem antes no DOM — por isso o título do evento é buscado dentro do
+  // diálogo (irmão do <header>, ver ShareSheet.vue), nunca solto na página.
   assertShareSheetVisible (eventTitle) {
     cy.contains('Compartilhar Evento').should('be.visible')
-    cy.contains(eventTitle).should('be.visible')
+      .parent('header')
+      .next()
+      .should('be.visible')
+      .and('contain.text', eventTitle)
   }
 }
 

@@ -41,8 +41,16 @@ O projeto utiliza um arquivo de fixture para armazenar as credenciais de teste. 
 | Comando | Descrição |
 |---|---|
 | `npx cypress open` | Abre o Cypress em modo interativo (UI) para executar os testes |
-| `npx cypress run` | Executa todos os testes em modo headless |
+| `npx cypress run` | Executa todos os testes em modo headless (Electron) |
+| `npx cypress run --headed` | Executa com navegador visível (Electron) — usar para acompanhar a execução |
 | `npm run cy:run:login` | Executa apenas o teste de login |
+
+> **Atenção ao rodar `--headed`:** usar `--browser chrome` trava a tela
+> indefinidamente — o Chrome real pede permissão de geolocalização via um
+> prompt nativo que o Cypress não consegue responder, e `Feed.vue` fica
+> esperando essa resposta para sempre. Sem `--browser`, o Cypress usa o
+> Electron embutido, que nega geolocalização automaticamente — é a forma
+> segura de rodar headed.
 
 ## Estrutura do Projeto
 

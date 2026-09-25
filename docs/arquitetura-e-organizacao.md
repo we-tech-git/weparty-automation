@@ -4,8 +4,12 @@
 
 ## Estrutura de pastas
 
-Espelha a estrutura de rotas do front (`public` / `private`) e separa por
-responsabilidade:
+Espelha os grupos de página do front (`src/pages/(public)/` /
+`src/pages/(private)/`) e separa por responsabilidade — **não** o prefixo
+da URL: esses grupos organizam os arquivos do front mas não aparecem na
+rota (`(private)/feed.vue` vira `/feed`, não `/private/feed`; a proteção
+de rota vem de `meta.requiresAuth`, não mais do path). Ver
+`support/constants/routes.js` para as rotas reais.
 
 ```
 cypress/
