@@ -46,12 +46,20 @@ function mockToggleLikeSuccess () {
   })
 }
 
+function mockToggleUnlikeSuccess () {
+  cy.fixture('api/toggle-unlike-success').then(fixture => {
+    cy.intercept('POST', /\/events\/[^/]+\/likes(\?.*)?$/, fixture).as('toggleUnlikeRequest')
+  })
+}
+
 describe('Feed - FeedCard', () => {
   let feedEvent
+  let secondEvent
 
   before(() => {
     cy.fixture('api/events-recommendations').then(fixture => {
       feedEvent = fixture.data.events[0]
+      secondEvent = fixture.data.events[1]
     })
   })
 
@@ -109,5 +117,193 @@ describe('Feed - FeedCard', () => {
 
     // Assert — compartilhar é só client-side (useShareStore), sem chamada de API.
     feedCardPage.assertShareSheetVisible(feedEvent.name)
+  })
+
+  it('CT-013-feed-descurtir-evento: descurtir um evento que estava curtido restaura o estado inicial', () => {
+    // Arrange — curtir
+    mockToggleLikeSuccess()
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+    feedCardPage.assertNotLiked()
+    feedCardPage.assertLikesCount(feedEvent.likesCount)
+
+    // Act — curtir
+    feedCardPage.toggleLike()
+
+    // Assert — curtido
+    cy.wait('@toggleLikeRequest')
+    feedCardPage.assertLiked()
+    feedCardPage.assertLikesCount(feedEvent.likesCount + 1)
+
+    // Arrange — preparar mock de descurtir
+    mockToggleUnlikeSuccess()
+
+    // Act — descurtir
+    feedCardPage.toggleLike()
+
+    // Assert — volta ao estado inicial
+    cy.wait('@toggleUnlikeRequest')
+    feedCardPage.assertNotLiked()
+    feedCardPage.assertLikesCount(feedEvent.likesCount)
+  })
+
+  it('CT-014-feed-curtir-segundo-evento: curtir o segundo card do feed atualiza apenas o seu estado', () => {
+    // Arrange
+    mockToggleLikeSuccess()
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+    feedCardPage.assertNotLiked(1)
+    feedCardPage.assertLikesCount(secondEvent.likesCount, 1)
+
+    // Act
+    feedCardPage.toggleLike(1)
+
+    // Assert
+    cy.wait('@toggleLikeRequest')
+    feedCardPage.assertLiked(1)
+    feedCardPage.assertLikesCount(secondEvent.likesCount + 1, 1)
+    feedCardPage.assertNotLiked(0)
+  })
+
+  it('CT-015-feed-fechar-comentarios: fechar o painel de comentários após abri-lo', () => {
+    // Arrange
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+    cy.wait('@getEventComments', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedCardPage.assertCommentsHidden()
+
+    // Act — abrir
+    feedCardPage.toggleComments()
+
+    // Assert — visível
+    feedCardPage.assertCommentsVisible()
+
+    // Act — fechar
+    feedCardPage.toggleComments()
+
+    // Assert — oculto novamente
+    feedCardPage.assertCommentsHidden()
+  })
+
+  it('CT-016-feed-curtir-dois-eventos: curtir dois eventos diferentes mantém o estado de cada um', () => {
+    // Arrange
+    mockToggleLikeSuccess()
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+    feedCardPage.assertNotLiked(0)
+    feedCardPage.assertNotLiked(1)
+
+    // Act — curtir card 0
+    feedCardPage.toggleLike(0)
+    cy.wait('@toggleLikeRequest')
+
+    // Act — curtir card 1
+    feedCardPage.toggleLike(1)
+    cy.wait('@toggleLikeRequest')
+
+    // Assert — ambos curtidos
+    feedCardPage.assertLiked(0)
+    feedCardPage.assertLiked(1)
+    feedCardPage.assertNotLiked(2)
+  })
+
+  it('CT-017-feed-verificar-todos-cards: feed carrega os 5 eventos mockados como cards', () => {
+    // Arrange
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+
+    // Act & Assert
+    feedPage.assertLoaded()
+    feedPage.assertCardsCount(5)
+  })
+
+  it('CT-018-feed-verificar-dados-card: card exibe título, data, local e nome do organizador', () => {
+    // Arrange
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+
+    // Act & Assert
+    feedPage.assertLoaded()
+    feedCardPage.assertEventTitle(feedEvent.name)
+    feedCardPage.assertEventDate('2099')
+    feedCardPage.assertEventLocation(feedEvent.location)
+    feedCardPage.assertEventOrganizer(feedEvent.organizer.name)
+  })
+
+  it('CT-019-feed-curtir-sem-alterar-outros: curtir um card não altera o estado de outro', () => {
+    // Arrange
+    mockToggleLikeSuccess()
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+
+    feedPage.assertLoaded()
+    feedCardPage.assertNotLiked(0)
+    feedCardPage.assertNotLiked(1)
+
+    // Act
+    feedCardPage.toggleLike(0)
+
+    // Assert
+    cy.wait('@toggleLikeRequest')
+    feedCardPage.assertLiked(0)
+    feedCardPage.assertNotLiked(1)
+    feedCardPage.assertNotLiked(2)
+  })
+
+  it('CT-020-feed-compartilhar-segundo: compartilhar o segundo evento exibe o nome correto no diálogo', () => {
+    // Arrange
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+
+    // Act
+    feedCardPage.share(1)
+
+    // Assert
+    feedCardPage.assertShareSheetVisible(secondEvent.name)
+  })
+
+  it('CT-021-feed-estado-like-apos-comentarios: estado de like persiste após abrir e fechar comentários', () => {
+    // Arrange
+    mockToggleLikeSuccess()
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+    cy.wait('@getEventComments', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedCardPage.assertCommentsHidden()
+
+    // Act — curtir
+    feedCardPage.toggleLike()
+    cy.wait('@toggleLikeRequest')
+
+    // Assert — curtido
+    feedCardPage.assertLiked()
+
+    // Act — abrir e fechar comentários
+    feedCardPage.toggleComments()
+    feedCardPage.assertCommentsVisible()
+    feedCardPage.toggleComments()
+    feedCardPage.assertCommentsHidden()
+
+    // Assert — like persiste
+    feedCardPage.assertLiked()
+  })
+
+  it('CT-022-feed-estado-inicial-card: verificar estado inicial do card antes de qualquer interação', () => {
+    // Arrange
+    cy.login()
+    cy.wait('@getFeedEvents', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+    feedPage.assertLoaded()
+    cy.wait('@getEventComments', { timeout: FEED_EVENTS_REQUEST_TIMEOUT })
+
+    // Act & Assert
+    feedCardPage.assertNotLiked()
+    feedCardPage.assertLikesCount(feedEvent.likesCount)
+    feedCardPage.assertCommentsHidden()
+    feedCardPage.assertEventTitle(feedEvent.name)
   })
 })

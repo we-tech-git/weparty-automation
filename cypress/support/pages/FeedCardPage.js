@@ -80,6 +80,22 @@ class FeedCardPage {
       .should('be.visible')
       .and('contain.text', eventTitle)
   }
+
+  assertEventTitle (title, index = 0) {
+    this.card(index).find('h3').should('contain.text', title)
+  }
+
+  assertEventLocation (location, index = 0) {
+    this.card(index).should('contain.text', location)
+  }
+
+  assertEventOrganizer (organizer, index = 0) {
+    this.card(index).should('contain.text', organizer)
+  }
+
+  assertEventDate (expectedDatePart, index = 0) {
+    this.card(index).should('contain.text', expectedDatePart)
+  }
 }
 
 export const feedCardPage = new FeedCardPage()

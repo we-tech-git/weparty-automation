@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Like removido",
+  "data": {
+    "isLiked": false,
+    "likesCount": 5
+  }
+}

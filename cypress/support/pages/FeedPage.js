@@ -9,6 +9,10 @@ class FeedPage {
   assertLoaded () {
     cy.getBySel('feed-card', { timeout: FEED_CARD_VISIBLE_TIMEOUT }).should('have.length.at.least', 1)
   }
+
+  assertCardsCount (count) {
+    cy.getBySel('feed-card').should('have.length', count)
+  }
 }
 
 export const feedPage = new FeedPage()
