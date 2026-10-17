@@ -14,13 +14,13 @@ Cypress.Commands.add('localUserEmail', (role = 'user', offset = 0) =>
 )
 
 // Chamada direta à API local (cy.request). Não falha por status HTTP: o teste decide.
-Cypress.Commands.add('apiRequest', (method, path, { token, body, qs } = {}) =>
+Cypress.Commands.add('apiRequest', (method, path, { token, body, qs, headers } = {}) =>
   cy.request({
     method,
     url: `${Cypress.env('apiUrl')}${path}`,
     body,
     qs,
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    headers: { ...(token ? { Authorization: `Bearer ${token}` } : {}), ...(headers || {}) },
     failOnStatusCode: false,
   }),
 )

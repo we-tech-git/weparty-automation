@@ -59,4 +59,49 @@ suite('Pós-deploy - produção (somente leitura)', () => {
     // Assert
     cy.url({ timeout: 30000 }).should('not.include', '/login')
   })
+
+  it('CT-164-prod-social-posts-guard: as rotas de social-posts existem e recusam acesso sem chave (401, não 404/500)', () => {
+    // Act + Assert
+    ;[['GET', '/social-posts/approved'], ['POST', '/social-posts'], ['POST', '/social-posts/00000000-0000-0000-0000-000000000000/claim']].forEach(([method, path]) => {
+      cy.request({ method, url: `${Cypress.env('apiUrl')}${path}`, body: method === 'POST' ? {} : undefined, failOnStatusCode: false }).its('status').should('eq', 401)
+    })
+  })
+
+  it('CT-165-prod-social-posts-chave: com a chave de integração, a lista de aprovados responde (somente leitura)', function () {
+    if (!Cypress.env('prodSocialKey')) this.skip()
+    // Act
+    cy.request({ url: `${Cypress.env('apiUrl')}/social-posts/approved`, headers: { 'x-api-key': Cypress.env('prodSocialKey') }, log: false }).then((res) => {
+      // Assert
+      expect(res.status).to.eq(200)
+      expect(res.body).to.be.an('array')
+    })
+  })
+
+  it('CT-166-prod-social-posts-admin: o admin lista a fila e os publicados (somente leitura)', () => {
+    // Arrange
+    cy.request({ method: 'POST', url: `${Cypress.env('apiUrl')}/users/login`, body: { email: email(), password: senha() }, log: false }).then((login) => {
+      const headers = { Authorization: `Bearer ${login.body.data.token}` }
+      // Act + Assert
+      ;['', '?status=PENDING_APPROVAL', '?status=PUBLISHED'].forEach((qs) => {
+        cy.request({ url: `${Cypress.env('apiUrl')}/admin/social-posts${qs}`, headers }).then((res) => {
+          expect(res.status, `GET /admin/social-posts${qs}`).to.eq(200)
+          expect(res.body).to.be.an('array')
+        })
+      })
+    })
+  })
+
+  it('CT-167-prod-cms-social-posts: a tela de social posts do CMS abre e a aba Publicados carrega sem erro', () => {
+    // Act
+    cy.visit(`${Cypress.env('prodCmsUrl')}/login`)
+    cy.get('input[type="email"], input[name="email"]', { timeout: 30000 }).type(email(), { log: false })
+    cy.get('input[type="password"]').type(senha(), { log: false })
+    cy.get('button[type="submit"]').click()
+    cy.url({ timeout: 30000 }).should('not.include', '/login')
+    cy.visit(`${Cypress.env('prodCmsUrl')}/cms/admin/social-posts`)
+
+    // Assert
+    cy.contains('button', 'Publicados', { timeout: 30000 }).should('be.visible').click()
+    cy.contains(/erro|falha ao carregar/i).should('not.exist')
+  })
 })

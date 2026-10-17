@@ -33,6 +33,7 @@ module.exports = defineConfig({
       apiUrl: process.env.ENV_API_URL || 'https://api.wepartyapp.com',
       cmsUrl: process.env.ENV_CMS_URL || '',
       mailUrl: process.env.ENV_MAIL_URL || '',
+      socialKey: process.env.ENV_SOCIAL_KEY || '',
     },
     setupNodeEvents(on, config) {
       on('task', {
