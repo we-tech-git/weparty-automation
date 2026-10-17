@@ -31,3 +31,13 @@ API (`e2e/api/`): saúde e contrato, login, guards (401/403), papéis, eventos, 
 
 ## Bug conhecido
 CT-135 (`it.skip`): comentário só com espaços é aceito (201). Trocar por `it` quando corrigido.
+
+## Smoke pós-deploy em produção
+
+`cypress/e2e/postdeploy/smoke-producao.cy.js` é um smoke **somente leitura** que o agente dev roda depois do merge e do deploy. Só executa com `CYPRESS_postdeploy=1`. Credenciais e URLs nunca ficam no repositório: `CYPRESS_prodEmail`, `CYPRESS_prodPassword`, `CYPRESS_prodCmsUrl` e `CYPRESS_apiUrl`, mais `CYPRESS_BASE_URL` para o web-app.
+
+```
+CYPRESS_postdeploy=1 CYPRESS_BASE_URL=https://wepartyapp.com CYPRESS_apiUrl=https://api.wepartyapp.com \
+CYPRESS_prodCmsUrl=https://cms.wepartyapp.com CYPRESS_prodEmail=... CYPRESS_prodPassword=... \
+npx cypress run --spec "cypress/e2e/postdeploy/**"
+```
