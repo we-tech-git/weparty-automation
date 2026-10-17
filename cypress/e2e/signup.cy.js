@@ -1,3 +1,7 @@
+import { LOCAL_TEST_PASSWORD } from '../support/constants/local';
+
+// Dados do cadastro NÃO ficam em fixture versionada (o repositório é público). A senha vem de
+// CYPRESS_signupPassword; sem ela, usa a senha de teste do ambiente local (dump anonimizado).
 describe('Cadastro', () => {
   beforeEach(() => {
     cy.visit('/signup');
@@ -20,8 +24,7 @@ describe('Cadastro', () => {
 
   it('Deve realizar cadastro completo com sucesso', () => {
     // Arrange
-    cy.fixture('credentials').then((creds) => {
-      const signup = creds.signup;
+    cy.wrap({ name: 'Test User WeParty', password: Cypress.env('signupPassword') || LOCAL_TEST_PASSWORD }).then((signup) => {
 
       cy.task('getNextEmail').then(({ email, emailUser }) => {
         cy.get('#fullName').type(signup.name);
