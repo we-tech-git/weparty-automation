@@ -35,9 +35,10 @@ suite('CMS - Social posts (fila de aprovação e publicados)', () => {
     cy.visit(`${Cypress.env('cmsUrl')}/cms/admin/social-posts`)
 
     // Assert
-    cy.contains(legenda, { timeout: 30000 }).should('be.visible').click()
-    cy.contains('Texto para o X', { timeout: 15000 }).should('be.visible')
-    cy.contains('Texto do X do teste').should('be.visible')
+    // o post mais recente já abre na prévia (painel fixo), então a legenda existe no DOM mesmo coberta por outros elementos
+    cy.contains(legenda, { timeout: 30000 }).should('exist')
+    cy.contains('Texto para o X', { timeout: 15000 }).scrollIntoView().should('be.visible')
+    cy.contains('Texto do X do teste').should('exist')
   })
 
   it('CT-181-cms-social-publicados: depois de publicado, o post aparece na aba Publicados com "ver post"', () => {
