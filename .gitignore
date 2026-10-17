@@ -6,3 +6,4 @@ cypress/fixtures/users/credentials.json
 cypress/fixtures/.email-counter.json
 cypress/reports/
 docs/massa-de-teste.md
+cypress/fixtures/credentials.json
