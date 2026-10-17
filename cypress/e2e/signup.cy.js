@@ -1,11 +1,11 @@
 describe('Cadastro', () => {
   beforeEach(() => {
-    cy.visit('/public/Signup');
+    cy.visit('/signup');
   });
 
   it('Deve carregar a pagina de cadastro', () => {
     // Assert
-    cy.url().should('include', '/public/Signup');
+    cy.url().should('include', '/signup');
   });
 
   it('Deve exibir o formulario de cadastro com todos os campos', () => {
@@ -34,13 +34,15 @@ describe('Cadastro', () => {
         cy.get('button[type="submit"]').click();
 
         // Assert
-        cy.url({ timeout: 15000 }).should('include', '/public/ConfirmEmail');
+        cy.url({ timeout: 15000 }).should('include', '/confirm-email');
 
         // Act - buscar PIN de verificacao no inbox sharklasers
         cy.getVerificationPin(emailUser);
 
         // Act - preencher PIN e confirmar
-        cy.visit('/public/ConfirmEmail');
+        cy.visit('/confirm-email');
+        // Ambiente local: abrir a página reenvia o código (o anterior deixa de valer) — lê o PIN mais novo.
+        if (Cypress.env('local')) cy.getVerificationPin(emailUser, { minMessages: 2 });
         cy.then(() => {
           const pin = Cypress.env('VERIFICATION_PIN');
           cy.get('.pin-input').each(($input, index) => {
@@ -51,25 +53,25 @@ describe('Cadastro', () => {
         });
 
         // Assert
-        cy.url({ timeout: 15000 }).should('include', '/public/Interest');
+        cy.url({ timeout: 15000 }).should('include', '/interest');
 
         // Act - pular interesses
         cy.contains('Pular esta etapa por enquanto').click();
 
         // Assert
-        cy.url({ timeout: 10000 }).should('include', '/public/AddFriends');
+        cy.url({ timeout: 10000 }).should('include', '/add-friends');
 
         // Act - pular amigos
         cy.contains('Pular esta etapa por enquanto').click();
 
         // Assert
-        cy.url({ timeout: 10000 }).should('include', '/public/Congratulations');
+        cy.url({ timeout: 10000 }).should('include', '/congratulations');
 
         // Act - continuar para o feed
         cy.get('button.continue-btn').click();
 
         // Assert
-        cy.url({ timeout: 15000 }).should('include', '/private/feed');
+        cy.url({ timeout: 15000 }).should('include', '/feed');
       });
     });
   });
