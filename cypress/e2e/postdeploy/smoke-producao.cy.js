@@ -21,7 +21,8 @@ suite('Pós-deploy - produção (somente leitura)', () => {
     cy.request(`${Cypress.env('apiUrl')}/health`).then((res) => {
       // Assert
       expect(res.status).to.eq(200)
-      expect(res.body.status).to.eq('ok')
+      expect(res.body.state).to.eq('ok')
+      expect(res.body).to.not.have.property('status')
     })
     cy.request(`${Cypress.env('apiUrl')}/api-json`).its('status').should('eq', 200)
   })
