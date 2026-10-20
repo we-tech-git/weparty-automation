@@ -58,7 +58,7 @@ suite('CMS - smoke (ambiente local)', () => {
       cy.contains('18/600').should('be.visible')
 
       // Act + Assert - o campo não aceita mais que 600 caracteres
-      cy.get('textarea[maxlength="600"]').invoke('val', 'a'.repeat(600)).trigger('input')
+      cy.get('textarea[maxlength="600"]').clear().type('a'.repeat(600), { delay: 0 })
       cy.contains('600/600').should('be.visible')
       cy.get('textarea[maxlength="600"]').type('b')
       cy.get('textarea[maxlength="600"]').invoke('val').should('have.length', 600)
