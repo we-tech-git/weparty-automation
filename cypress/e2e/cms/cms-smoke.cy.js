@@ -39,4 +39,29 @@ suite('CMS - smoke (ambiente local)', () => {
       })
     })
   })
+
+  it('CT-152-cms-contador-descricao: o contador 0/600 da descrição do evento acompanha a digitação e respeita o limite (WEPARTY-186)', () => {
+    // Arrange
+    cy.localUserEmail('admin').then((email) => {
+      cy.visit(`${Cypress.env('cmsUrl')}/login`)
+      cy.get('input[type="email"], input[name="email"]', { timeout: 30000 }).type(email)
+      cy.get('input[type="password"]').type(LOCAL_TEST_PASSWORD)
+      cy.get('button[type="submit"]').click()
+      cy.url({ timeout: 30000 }).should('not.include', '/login')
+
+      // Act
+      cy.visit(`${Cypress.env('cmsUrl')}/cms/producer/new-event`)
+      cy.contains('0/600', { timeout: 30000 }).should('be.visible')
+      cy.get('textarea[maxlength="600"]').type('Descrição de teste')
+
+      // Assert - o contador sobe junto com o texto
+      cy.contains('18/600').should('be.visible')
+
+      // Act + Assert - o campo não aceita mais que 600 caracteres
+      cy.get('textarea[maxlength="600"]').invoke('val', 'a'.repeat(600)).trigger('input')
+      cy.contains('600/600').should('be.visible')
+      cy.get('textarea[maxlength="600"]').type('b')
+      cy.get('textarea[maxlength="600"]').invoke('val').should('have.length', 600)
+    })
+  })
 })
