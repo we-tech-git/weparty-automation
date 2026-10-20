@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "message": "Erro interno ao processar curtida",
+  "statusCode": 500
+}

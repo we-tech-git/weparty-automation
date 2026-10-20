@@ -5,6 +5,10 @@
 export const LOGIN_FORM_VISIBLE_TIMEOUT = 15000
 export const LOGIN_REDIRECT_TIMEOUT = 20000
 
+// Cadastro: cada etapa inclui uma chamada real de API (producao) seguida de
+// redirect client-side; o fluxo completo ainda aguarda o e-mail com o PIN.
+export const SIGNUP_REDIRECT_TIMEOUT = 15000
+
 // Feed depende do redirect do login (que já tem seu próprio delay) + o
 // carregamento assíncrono dos eventos. Além disso Feed.vue só chama
 // fetchEvents() (o GET que popula o card) depois de aguardar
@@ -16,3 +20,7 @@ export const LOGIN_REDIRECT_TIMEOUT = 20000
 // recomendações/comentários e o card estourariam o timeout antes de aparecer.
 export const FEED_EVENTS_REQUEST_TIMEOUT = 20000
 export const FEED_CARD_VISIBLE_TIMEOUT = 30000
+
+// Pagina de detalhes: carrega o evento + comentarios + trends + status de
+// curtida/favorito/presenca a partir de producao (todos mockados no spec).
+export const EVENT_DETAILS_VISIBLE_TIMEOUT = 30000

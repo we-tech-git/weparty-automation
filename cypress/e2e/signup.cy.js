@@ -1,76 +1,64 @@
+import { signupPage } from '../support/pages/SignupPage'
+import { ROUTES } from '../support/constants/routes'
+
 describe('Cadastro', () => {
   beforeEach(() => {
-    cy.visit('/public/Signup');
-  });
+    signupPage.visit()
+  })
 
   it('Deve carregar a pagina de cadastro', () => {
     // Assert
-    cy.url().should('include', '/public/Signup');
-  });
+    signupPage.assertLoaded()
+  })
 
   it('Deve exibir o formulario de cadastro com todos os campos', () => {
     // Assert
-    cy.get('#fullName').should('be.visible');
-    cy.get('#email').should('be.visible');
-    cy.get('#password').should('be.visible');
-    cy.get('#confirmPassword').should('be.visible');
-    cy.get('.terms-checkbox').should('exist');
-    cy.get('button[type="submit"]').should('be.visible');
-  });
+    signupPage.assertFormVisible()
+  })
 
   it('Deve realizar cadastro completo com sucesso', () => {
     // Arrange
     cy.fixture('credentials').then((creds) => {
-      const signup = creds.signup;
+      const signup = creds.signup
 
       cy.task('getNextEmail').then(({ email, emailUser }) => {
-        cy.get('#fullName').type(signup.name);
-        cy.get('#email').type(email);
-        cy.get('#password').type(signup.password);
-        cy.get('#confirmPassword').type(signup.password);
-        cy.get('.terms-checkbox').check({ force: true });
+        signupPage.fillForm({ ...signup, email })
 
         // Act
-        cy.get('button[type="submit"]').click();
+        signupPage.submit()
 
         // Assert
-        cy.url({ timeout: 15000 }).should('include', '/public/ConfirmEmail');
+        signupPage.assertOn(ROUTES.CONFIRM_EMAIL)
+        signupPage.assertPinInputsVisible()
 
-        // Act - buscar PIN de verificacao no inbox sharklasers
-        cy.getVerificationPin(emailUser);
-
-        // Act - preencher PIN e confirmar
-        cy.visit('/public/ConfirmEmail');
-        cy.then(() => {
-          const pin = Cypress.env('VERIFICATION_PIN');
-          cy.get('.pin-input').each(($input, index) => {
-            if (index < pin.length) {
-              cy.wrap($input).type(pin[index]);
-            }
-          });
-        });
+        // Act - buscar PIN de verificacao no inbox sharklasers. Nao visitar
+        // /confirm-email de novo: o mount da pagina reenvia o codigo e
+        // invalida o PIN que acabou de ser lido.
+        cy.getVerificationPin(emailUser).then((pin) => {
+          signupPage.fillVerificationPin(pin)
+        })
 
         // Assert
-        cy.url({ timeout: 15000 }).should('include', '/public/Interest');
+        signupPage.assertOn(ROUTES.INTEREST)
 
         // Act - pular interesses
-        cy.contains('Pular esta etapa por enquanto').click();
+        signupPage.skipCurrentStep()
 
         // Assert
-        cy.url({ timeout: 10000 }).should('include', '/public/AddFriends');
+        signupPage.assertOn(ROUTES.ADD_FRIENDS)
 
         // Act - pular amigos
-        cy.contains('Pular esta etapa por enquanto').click();
+        signupPage.skipCurrentStep()
 
         // Assert
-        cy.url({ timeout: 10000 }).should('include', '/public/Congratulations');
+        signupPage.assertOn(ROUTES.CONGRATULATIONS)
 
         // Act - continuar para o feed
-        cy.get('button.continue-btn').click();
+        signupPage.continueToFeed()
 
         // Assert
-        cy.url({ timeout: 15000 }).should('include', '/private/feed');
-      });
-    });
-  });
-});
+        signupPage.assertOn(ROUTES.FEED)
+      })
+    })
+  })
+})

@@ -45,6 +45,15 @@ exemplos de cada uma estão em `docs/`.
 
 - Branch: `<tipo>/WEPARTY-<n>` (igual ao `we-party-web-app`).
 - Commits: Conventional Commits.
+- **PTC (Protocolo de Testes Cypress):** toda execução de testes Cypress
+  termina com o relatório HTML atualizado em `cypress/reports/report.html`,
+  independente do tipo/spec executado. Rodar a suíte completa (`npm test` ou
+  `npm run cy:run`) para que o relatório liste **todos** os specs (login,
+  cadastro, feed, detalhes etc.). O HTML é gerado por
+  `scripts/generate-report.js` com o design do WeParty (não usar marge); os
+  scripts já encadeiam `npm run report`, inclusive quando há falhas. Se rodar
+  o Cypress direto, rodar `npm run report` ao final. Skill:
+  `.opencode/skills/ptc/SKILL.md`.
 - Detalhes: [docs/processo.md](docs/processo.md)
 
 ## Índice de documentação

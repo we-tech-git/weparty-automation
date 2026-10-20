@@ -32,6 +32,11 @@ describe('Login', () => {
     cy.clearLocalStorage()
     cy.clearAllSessionStorage()
     cy.clearCookies()
+
+    // Apos o login com sucesso o app redireciona para o feed, que dispara
+    // leituras reais com o token mockado; sem os mocks elas respondem 401 e
+    // o callApi desloga o usuario, derrubando o teste antes do assert de URL.
+    cy.mockFeedReads()
   })
 
   it('CT-001-login-sucesso-lembrar-me: login com sucesso marcando lembrar-me', () => {

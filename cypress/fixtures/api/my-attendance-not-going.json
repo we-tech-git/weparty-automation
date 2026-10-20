@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "message": "Presenca consultada",
+  "data": {
+    "isAttending": false
+  }
+}

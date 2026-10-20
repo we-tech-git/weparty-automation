@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "message": "Status de seguimento",
+  "data": {
+    "isFollowing": false
+  }
+}

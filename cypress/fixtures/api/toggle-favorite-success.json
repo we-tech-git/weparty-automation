@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "message": "Evento adicionado aos favoritos",
+  "data": {
+    "isFavorite": true
+  }
+}

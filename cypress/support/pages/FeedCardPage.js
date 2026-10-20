@@ -35,6 +35,10 @@ class FeedCardPage {
     this.shareButton(index).click()
   }
 
+  closeShareSheet () {
+    cy.get('body').type('{esc}')
+  }
+
   assertLiked (index = 0) {
     this.likeButton(index)
       .should('have.attr', 'aria-pressed', 'true')
@@ -67,18 +71,43 @@ class FeedCardPage {
     cy.contains('Seja o primeiro a comentar!').should('not.be.visible')
   }
 
+  assertCommentsLabelVisible () {
+    // O painel InlineComments começa fechado (opacity:0), então o texto
+    // "Comentários" existe no DOM mas não está visível. Verificamos existência,
+    // não visibilidade — o painel só fica visível após toggle.
+    cy.contains('Comentários').should('exist')
+  }
+
+  assertEventInterestsLabelVisible () {
+    cy.contains('Interesses do evento').should('exist')
+  }
+
   // ShareSheet.vue (mockada via useShareStore) não tem data-testid — mesmo
   // caso do painel de comentários, cai no texto visível do diálogo. Um
   // `cy.contains(eventTitle)` solto é ambíguo: o próprio FeedCard por trás
   // do diálogo tem um `<h3 class="title">` com o mesmo texto do evento, e
   // ele vem antes no DOM — por isso o título do evento é buscado dentro do
   // diálogo (irmão do <header>, ver ShareSheet.vue), nunca solto na página.
+  assertCommentsAnyPanelVisible () {
+    // Quando há múltiplas instâncias do painel de comentários (uma por
+    // card), cy.contains('Seja o primeiro a comentar!') acha o primeiro
+    // match no DOM, que pode ser de um card com painel fechado (opacity:0).
+    // Buscamos todos e exigimos que ao menos um esteja visível.
+    cy.contains('Seja o primeiro a comentar!').should('exist')
+    cy.get('span').filter(':contains("Seja o primeiro a comentar!")').filter(':visible')
+      .should('have.length.at.least', 1)
+  }
+
   assertShareSheetVisible (eventTitle) {
     cy.contains('Compartilhar Evento').should('be.visible')
       .parent('header')
       .next()
       .should('be.visible')
       .and('contain.text', eventTitle)
+  }
+
+  assertShareSheetHidden () {
+    cy.contains('Compartilhar Evento').should('not.exist')
   }
 
   assertEventTitle (title, index = 0) {

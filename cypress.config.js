@@ -4,6 +4,9 @@ const path = require('path');
 
 module.exports = defineConfig({
   e2e: {
+    chromeWebSecurity: false,
+    experimentalModifyObstructiveThirdPartyCode: true,
+    modifyObstructiveCode: true,
     baseUrl: 'https://www.wepartyapp.com',
     viewportWidth: 1280,
     viewportHeight: 720,
@@ -25,6 +28,15 @@ module.exports = defineConfig({
       inlineAssets: true,
     },
     setupNodeEvents(on, config) {
+      on('before:browser:launch', (browser, launchOptions) => {
+        if (browser.family === 'chromium' && browser.name !== 'electron') {
+          launchOptions.args.push('--disable-web-security')
+          launchOptions.args.push('--disable-features=IsolateOrigins,site-per-process')
+          launchOptions.args.push('--disable-site-isolation-trials')
+        }
+        return launchOptions
+      })
+
       on('task', {
         getNextEmail() {
           const counterPath = path.join(__dirname, 'cypress', 'fixtures', '.email-counter.json');

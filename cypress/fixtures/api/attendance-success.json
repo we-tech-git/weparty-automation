@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Presenca confirmada",
+  "data": {
+    "status": "GOING",
+    "isAttending": true
+  }
+}
