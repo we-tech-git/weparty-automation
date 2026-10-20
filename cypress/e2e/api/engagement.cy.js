@@ -85,14 +85,40 @@ suite('API - Engajamento', () => {
     })
   })
 
-  // BUG CONHECIDO (achado em 17/10 no ambiente local): conteúdo só com espaços ("   ") é ACEITO (201) na
-  // criação, na resposta e (a confirmar) na edição — @IsNotEmpty() não rejeita string de espaços.
-  // Quando corrigido (trim + IsNotEmpty), trocar it.skip por it.
-  it.skip('CT-135-api-comentario-so-espacos: conteúdo só com espaços deve ser recusado (BUG conhecido)', () => {
-    // Act
-    cy.apiRequest('POST', `/events/${eventId}/comments`, { token: sessao.token, body: { content: '   ' } }).then((res) => {
-      // Assert
-      expect(res.status).to.eq(400)
+  // Conteúdo só com espaços é recusado desde a WEPARTY-206 (trim + IsNotEmpty nos DTOs de comentário).
+  it('CT-135-api-comentario-so-espacos: conteúdo só com espaços é recusado na criação, na resposta e na edição (WEPARTY-206)', () => {
+    // Arrange
+    const espacos = '   '
+    // Act + Assert - criação
+    cy.apiRequest('POST', `/events/${eventId}/comments`, { token: sessao.token, body: { content: espacos } }).its('status').should('eq', 400)
+    // Arrange - comentário válido para testar resposta e edição
+    cy.apiRequest('POST', `/events/${eventId}/comments`, { token: sessao.token, body: { content: `base ${Date.now()}` } }).then((base) => {
+      const id = idDe(base.body)
+      expect(id, 'comentário base').to.be.a('string')
+      // Act + Assert - resposta e edição
+      cy.apiRequest('POST', `/events/${eventId}/comments/${id}/reply`, { token: sessao.token, body: { content: espacos } }).its('status').should('eq', 400)
+      cy.apiRequest('PUT', `/events/${eventId}/comments/${id}`, { token: sessao.token, body: { content: espacos } }).its('status').should('eq', 400)
+      // Limpeza
+      cy.apiRequest('DELETE', `/events/${eventId}/comments/${id}`, { token: sessao.token })
+    })
+  })
+
+  // Limite de 2000 caracteres no content do comentário (WEPARTY-204; confirmação do número na WEPARTY-216).
+  it('CT-136-api-comentario-limite: 2000 caracteres é aceito e 2001 é recusado', () => {
+    // Arrange
+    const noLimite = 'a'.repeat(2000)
+    const acima = 'a'.repeat(2001)
+    // Act + Assert - acima do limite
+    cy.apiRequest('POST', `/events/${eventId}/comments`, { token: sessao.token, body: { content: acima } }).its('status').should('eq', 400)
+    // Act - no limite
+    cy.apiRequest('POST', `/events/${eventId}/comments`, { token: sessao.token, body: { content: noLimite } }).then((res) => {
+      // Assert - aceito e gravado inteiro
+      expect(res.status).to.be.oneOf([200, 201])
+      const id = idDe(res.body)
+      expect(id, 'id do comentário no limite').to.be.a('string')
+      cy.dbQuery(`select length(content) from "EventComment" where id='${id}'`).then(Number).should('eq', 2000)
+      // Limpeza
+      cy.apiRequest('DELETE', `/events/${eventId}/comments/${id}`, { token: sessao.token })
     })
   })
 
