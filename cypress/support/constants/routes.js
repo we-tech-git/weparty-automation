@@ -14,4 +14,5 @@ export const ROUTES = {
 export const CMS_ROUTES = {
   LOGIN: '/login',
   ADMIN_REPORTS: '/cms/admin/reports',
+  NEW_EVENT: '/cms/producer/new-event',
 }
