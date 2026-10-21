@@ -1,4 +1,5 @@
 import { LOCAL_TEST_PASSWORD } from '../../support/constants/local'
+import { cmsNewEventPage } from '../../support/pages/CmsNewEventPage'
 
 // CMS (Next.js) contra o ambiente local. O CMS tem URL base própria (Cypress.env('cmsUrl')) e, por padrão,
 // aponta para api.dev.wepartyapp.com — por isso o primeiro teste garante que NENHUMA chamada vaza para um
@@ -50,18 +51,18 @@ suite('CMS - smoke (ambiente local)', () => {
       cy.url({ timeout: 30000 }).should('not.include', '/login')
 
       // Act
-      cy.visit(`${Cypress.env('cmsUrl')}/cms/producer/new-event`)
-      cy.contains('0/600', { timeout: 30000 }).should('be.visible')
-      cy.get('textarea[maxlength="600"]').type('Descrição de teste')
+      cmsNewEventPage.visit()
+      cmsNewEventPage.assertCounter(0)
+      cmsNewEventPage.typeDescription('Descrição de teste')
 
       // Assert - o contador sobe junto com o texto
-      cy.contains('18/600').should('be.visible')
+      cmsNewEventPage.assertCounter(18)
 
       // Act + Assert - o campo não aceita mais que 600 caracteres
-      cy.get('textarea[maxlength="600"]').clear().type('a'.repeat(600), { delay: 0 })
-      cy.contains('600/600').should('be.visible')
-      cy.get('textarea[maxlength="600"]').type('b')
-      cy.get('textarea[maxlength="600"]').invoke('val').should('have.length', 600)
+      cmsNewEventPage.typeDescription('a'.repeat(600), { delay: 0 })
+      cmsNewEventPage.assertCounter(600)
+      cmsNewEventPage.description().type('b')
+      cmsNewEventPage.assertDescriptionLength(600)
     })
   })
 })
