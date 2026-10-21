@@ -193,9 +193,15 @@ ${logo ? `<link rel="icon" href="${logo}">` : ''}
   --bg:#fff5f7;
   --card:#ffffff;
   --green:#10b981;
+  --teal:#14b8a6;
+  --teal-soft:#2dd4bf;
+  --cyan:#06b6d4;
+  --cyan-soft:#22d3ee;
   --red:#ef4444;
   --amber:#f59e0b;
   --grad:linear-gradient(90deg,#ff9a4d 0%,#ff5f8f 100%);
+  --grad-hero:linear-gradient(115deg,#ff9a4d 0%,#ff6f86 30%,#ff5f8f 50%,#14b8a6 70%,#06b6d4 100%);
+  --grad-cool:linear-gradient(90deg,#10b981 0%,#06b6d4 100%);
   --grad-soft:linear-gradient(135deg,#fff7f3 0%,#fff0f6 100%);
   --radius:26px;
   --shadow:0 24px 60px -32px rgba(255,95,143,.45);
@@ -210,9 +216,11 @@ body{
   font-family:var(--font-body);
   color:var(--ink);
   background:
-    radial-gradient(900px 500px at 8% -10%,rgba(255,154,77,.20),transparent 60%),
-    radial-gradient(900px 600px at 100% 0%,rgba(255,95,143,.20),transparent 55%),
-    var(--bg);
+    radial-gradient(900px 500px at 8% -10%,rgba(255,154,77,.18),transparent 60%),
+    radial-gradient(900px 600px at 100% 0%,rgba(255,95,143,.16),transparent 55%),
+    radial-gradient(820px 520px at 0% 100%,rgba(20,184,166,.18),transparent 62%),
+    radial-gradient(820px 540px at 100% 100%,rgba(6,182,212,.16),transparent 60%),
+    linear-gradient(160deg,#fff5f7 0%,#fff0f6 20%,#fce7f3 40%,#ecfdf5 60%,#d1fae5 76%,#cffafe 90%,#a5f3fc 100%);
 }
 body::before{
   content:"";
@@ -234,9 +242,10 @@ a{color:inherit}
 .top-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .pill{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:9px 15px;background:#fff;border:1px solid var(--line);font-size:.78rem;font-weight:600;color:var(--ink-soft);box-shadow:0 8px 20px -16px rgba(26,28,46,.5)}
 .pill--brand{background:var(--grad);border:0;color:#fff;box-shadow:0 12px 24px -12px rgba(255,95,143,.65)}
+.pill--cool{background:var(--grad-cool);border:0;color:#fff;box-shadow:0 12px 24px -12px rgba(6,182,212,.6)}
 .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(16,185,129,.15)}
 .card{background:var(--card);border:1px solid rgba(255,95,143,.12);border-radius:var(--radius);box-shadow:var(--shadow)}
-.hero{overflow:hidden;position:relative;display:grid;grid-template-columns:1.35fr .65fr;gap:24px;padding:38px 42px;background:linear-gradient(115deg,#ff9a4d 0%,#ff6f86 48%,#ff5f8f 100%);color:#fff;border:0}
+.hero{overflow:hidden;position:relative;display:grid;grid-template-columns:1.35fr .65fr;gap:24px;padding:38px 42px;background:var(--grad-hero);color:#fff;border:0}
 .hero::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.16);right:-120px;top:-180px;filter:blur(4px)}
 .hero::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.10);left:35%;bottom:-170px}
 .hero-copy{position:relative;z-index:1}
@@ -248,7 +257,7 @@ a{color:inherit}
 .hero-badges b{font-family:var(--font-display);font-size:1.05rem}
 .score{position:relative;z-index:1;display:grid;place-items:center;min-height:230px}
 .score-ring{position:relative;width:212px;height:212px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#fff calc(var(--pct,0) * 1%),rgba(255,255,255,.22) 0);transition:none}
-.score-ring::before{content:"";position:absolute;inset:16px;border-radius:50%;background:linear-gradient(160deg,#ff7a76,#ff5f8f);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.score-ring::before{content:"";position:absolute;inset:16px;border-radius:50%;background:linear-gradient(160deg,#14b8a6,#0891b2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
 .score-inner{position:relative;z-index:1;text-align:center}
 .score-inner b{display:block;font-family:var(--font-display);font-size:3.2rem;line-height:1;letter-spacing:-.04em}
 .score-inner span{display:block;margin-top:6px;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.86)}
@@ -261,6 +270,7 @@ a{color:inherit}
 .stat--pass{--tint:rgba(16,185,129,.12)}
 .stat--fail{--tint:rgba(239,68,68,.10)}
 .stat--pending{--tint:rgba(245,158,11,.12)}
+.stat--time{--tint:rgba(20,184,166,.14)}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 18px;margin-bottom:20px;position:sticky;top:12px;z-index:20;backdrop-filter:blur(14px);background:rgba(255,255,255,.86)}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter{border:1px solid var(--line);background:#fff;color:var(--ink-soft);border-radius:999px;padding:9px 14px;font-family:var(--font-body);font-size:.78rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .18s ease}
@@ -291,9 +301,14 @@ a{color:inherit}
 .spec-count b{font-family:var(--font-display);font-size:1rem;color:var(--ink)}
 .spec-time{color:var(--muted);font-size:.76rem;font-variant-numeric:tabular-nums}
 .spec-track{grid-column:1/-1;height:8px;border-radius:999px;background:#fbe7ee;overflow:hidden}
-.spec-fill{display:block;height:100%;width:0;border-radius:inherit;background:var(--grad);transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.spec-fill{display:block;height:100%;width:0;border-radius:inherit;background:var(--grad-hero);transition:width .9s cubic-bezier(.2,.8,.2,1)}
 .spec-fill--failed{background:linear-gradient(90deg,#f59e0b,#ef4444)}
 .spec-fill--pending{background:linear-gradient(90deg,#fbbf24,#f59e0b)}
+.spec:nth-child(even){border-color:rgba(20,184,166,.18)}
+.spec:nth-child(even) .spec-track{background:#dcfaf7}
+.spec:nth-child(even) .spec-avatar{background:var(--grad-cool);box-shadow:0 12px 22px -14px rgba(6,182,212,.8)}
+.spec:nth-child(even) .ct{background:#ecfeff;color:#0e7490}
+.spec:nth-child(even) .test-row:hover{background:#f0fdfa}
 .tests{list-style:none;margin:0;padding:4px 14px 16px}
 .test{border-top:1px solid #f8edf1}
 .test-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:14px;align-items:center;padding:14px 12px;border-radius:14px;transition:background .16s}
@@ -359,7 +374,7 @@ a{color:inherit}
     </div>
     <div class="top-meta">
       <span class="pill pill--brand"><span class="dot"></span>E2E Cypress</span>
-      <span class="pill">Ambiente: Produção</span>
+      <span class="pill pill--cool">Ambiente: Produção</span>
       <span class="pill">${esc(dateLabel)} · ${esc(timeLabel)}</span>
     </div>
   </header>
@@ -390,7 +405,7 @@ a{color:inherit}
     <article class="stat card"><small>Total</small><b data-count="${total}">${total}</b><span>testes executados</span></article>
     <article class="stat stat--pass card"><small>Passaram</small><b data-count="${passed}">${passed}</b><span>${passPercent}% de sucesso</span></article>
     <article class="stat stat--fail card"><small>Falharam</small><b data-count="${failed}">${failed}</b><span>${failed ? 'revisar antes do deploy' : 'nenhuma falha'}</span></article>
-    <article class="stat stat--pending card"><small>Duração</small><b>${esc(duration)}</b><span>${specs.length} specs · ${esc(dateLabel)}</span></article>
+    <article class="stat stat--time card"><small>Duração</small><b>${esc(duration)}</b><span>${specs.length} specs · ${esc(dateLabel)}</span></article>
   </section>
 
   <section class="toolbar card" aria-label="Filtros do relatório">
@@ -534,7 +549,7 @@ a{color:inherit}
     var canvas = document.getElementById('confetti')
     var context = canvas.getContext('2d')
     var particles = []
-    var colors = ['#ff9a4d', '#ff5f8f', '#f472b6', '#ffd166', '#7bdff2']
+    var colors = ['#ff9a4d', '#ff5f8f', '#f472b6', '#14b8a6', '#22d3ee', '#34d399']
     var width = canvas.width = window.innerWidth
     var height = canvas.height = window.innerHeight
 
