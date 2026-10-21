@@ -4,5 +4,6 @@ cypress/screenshots/
 cypress/downloads/
 cypress/fixtures/users/credentials.json
 cypress/fixtures/.email-counter.json
-cypress/reports/
+cypress/reports/*
+!cypress/reports/report.html
 docs/massa-de-teste.md
