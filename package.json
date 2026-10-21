@@ -14,7 +14,8 @@
     "report:merge": "mochawesome-merge cypress/reports/*.json -o cypress/reports/merged-report.json",
     "report:generate": "marge cypress/reports/merged-report.json -o cypress/reports -f report",
     "report": "npm run report:merge && npm run report:generate",
-    "test:report": "npm run test && npm run report"
+    "test:report": "npm run test && npm run report",
+    "cy:run:cms": "cypress run --spec \"cypress/e2e/cms/cms-*-layout.cy.js,cypress/e2e/cms/cms-seguranca.cy.js,cypress/e2e/cms/cms-admin-shell.cy.js\""
   },
   "repository": {
     "type": "git",
