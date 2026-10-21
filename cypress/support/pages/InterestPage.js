@@ -6,12 +6,12 @@ import { ROUTES } from '../constants/routes'
 // Ver docs/dados-e-integracao.md.
 class InterestPage {
   // Tags de interesse do perfil do próprio usuário (Profile.vue).
-  profileTag (index = 0) {
-    return cy.getBySel('profile-interest-tag').eq(index)
+  profileTag (name) {
+    return cy.contains('[data-testid="profile-interest-tag"]', name)
   }
 
-  openFromProfile (index = 0) {
-    this.profileTag(index).click()
+  openFromProfile (name) {
+    this.profileTag(name).click()
   }
 
   assertOpened (name) {

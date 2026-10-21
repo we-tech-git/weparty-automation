@@ -38,7 +38,7 @@ suite('Página de interesse (ambiente local)', () => {
 
   it('CT-220-interesse-botao-abre-pagina: clicar no interesse do perfil leva à página daquele interesse', () => {
     // Act
-    interestPage.openFromProfile()
+    interestPage.openFromProfile(nomeDoInteresse)
 
     // Assert
     interestPage.assertOpened(nomeDoInteresse)
@@ -46,7 +46,7 @@ suite('Página de interesse (ambiente local)', () => {
 
   it('CT-221-interesse-scroll: a página do interesse responde ao scroll do mouse', () => {
     // Arrange
-    interestPage.openFromProfile()
+    interestPage.openFromProfile(nomeDoInteresse)
     interestPage.assertOpened(nomeDoInteresse)
 
     // Act
