@@ -1,0 +1,173 @@
+{
+  "events": [
+    {
+      "id": "evt-1",
+      "title": "Festa Agendada Um",
+      "description": "",
+      "startDate": "2026-10-26T02:19:48.159Z",
+      "endDate": null,
+      "location": "Local de teste",
+      "status": "PUBLISHED",
+      "isPublic": true,
+      "allowComments": true,
+      "photos": [],
+      "viewCount": 1,
+      "shareCount": 0,
+      "createdAt": "2026-10-01T00:00:00.000Z",
+      "creator": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Produtora Teste"
+      },
+      "eventInterests": [
+        {
+          "interestId": "i1",
+          "interest": {
+            "id": "i1",
+            "name": "Música"
+          }
+        }
+      ],
+      "_count": {
+        "likes": 0,
+        "comments": 0,
+        "attendances": 0
+      }
+    },
+    {
+      "id": "evt-2",
+      "title": "Festa Agendada Dois",
+      "description": "",
+      "startDate": "2026-10-30T02:19:48.163Z",
+      "endDate": null,
+      "location": "Local de teste",
+      "status": "PUBLISHED",
+      "isPublic": true,
+      "allowComments": true,
+      "photos": [],
+      "viewCount": 1,
+      "shareCount": 0,
+      "createdAt": "2026-10-01T00:00:00.000Z",
+      "creator": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Produtora Teste"
+      },
+      "eventInterests": [
+        {
+          "interestId": "i1",
+          "interest": {
+            "id": "i1",
+            "name": "Música"
+          }
+        }
+      ],
+      "_count": {
+        "likes": 0,
+        "comments": 0,
+        "attendances": 0
+      }
+    },
+    {
+      "id": "evt-3",
+      "title": "Show Em Alta",
+      "description": "",
+      "startDate": "2026-10-20T02:19:48.163Z",
+      "endDate": null,
+      "location": "Local de teste",
+      "status": "PUBLISHED",
+      "isPublic": true,
+      "allowComments": true,
+      "photos": [],
+      "viewCount": 120,
+      "shareCount": 0,
+      "createdAt": "2026-10-01T00:00:00.000Z",
+      "creator": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Produtora Teste"
+      },
+      "eventInterests": [
+        {
+          "interestId": "i1",
+          "interest": {
+            "id": "i1",
+            "name": "Música"
+          }
+        }
+      ],
+      "_count": {
+        "likes": 10,
+        "comments": 2,
+        "attendances": 4
+      }
+    },
+    {
+      "id": "evt-4",
+      "title": "Rascunho Sem Data",
+      "description": "",
+      "startDate": "2026-11-20T02:19:48.163Z",
+      "endDate": null,
+      "location": "Local de teste",
+      "status": "DRAFT",
+      "isPublic": true,
+      "allowComments": true,
+      "photos": [],
+      "viewCount": 1,
+      "shareCount": 0,
+      "createdAt": "2026-10-01T00:00:00.000Z",
+      "creator": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Produtora Teste"
+      },
+      "eventInterests": [
+        {
+          "interestId": "i1",
+          "interest": {
+            "id": "i1",
+            "name": "Música"
+          }
+        }
+      ],
+      "_count": {
+        "likes": 0,
+        "comments": 0,
+        "attendances": 0
+      }
+    },
+    {
+      "id": "evt-5",
+      "title": "Evento Arquivado",
+      "description": "",
+      "startDate": "2026-10-24T02:19:48.163Z",
+      "endDate": null,
+      "location": "Local de teste",
+      "status": "CANCELLED",
+      "isPublic": true,
+      "allowComments": true,
+      "photos": [],
+      "viewCount": 1,
+      "shareCount": 0,
+      "createdAt": "2026-10-01T00:00:00.000Z",
+      "creator": {
+        "id": "11111111-1111-4111-8111-111111111111",
+        "name": "Produtora Teste"
+      },
+      "eventInterests": [
+        {
+          "interestId": "i1",
+          "interest": {
+            "id": "i1",
+            "name": "Música"
+          }
+        }
+      ],
+      "_count": {
+        "likes": 0,
+        "comments": 0,
+        "attendances": 0
+      }
+    }
+  ],
+  "total": 5,
+  "page": 1,
+  "limit": 100,
+  "totalPages": 1
+}

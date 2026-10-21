@@ -16,3 +16,10 @@ export const CMS_ROUTES = {
   ADMIN_REPORTS: '/cms/admin/reports',
   NEW_EVENT: '/cms/producer/new-event',
 }
+
+// Rotas adicionais do CMS (WEPARTY-232 — novo layout).
+Object.assign(CMS_ROUTES, {
+  HOME: '/cms/home',
+  MY_EVENTS: '/cms/producer/my-events',
+  ADMIN_USERS: '/cms/admin/users',
+})

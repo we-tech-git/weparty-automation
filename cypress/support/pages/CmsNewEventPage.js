@@ -34,6 +34,45 @@ class CmsNewEventPage {
   assertDescriptionLength (length) {
     this.description().invoke('val').should('have.length', length)
   }
+
+  // --- novo layout (WEPARTY-232) ---
+  visitLogged (options) {
+    cy.cmsMockApi()
+    cy.cmsVisitLogged(CMS_ROUTES.NEW_EVENT, options)
+    cy.getBySel('panel-details').should('be.visible')
+    this.waitForHydration()
+  }
+
+  assertPanels () {
+    ;['panel-details', 'panel-datetime', 'panel-location', 'panel-interests', 'panel-faq'].forEach((id) => {
+      cy.getBySel(id).should('exist')
+    })
+    cy.getBySel('cover-dropzone').should('exist')
+    cy.getBySel('live-preview').should('exist')
+    cy.getBySel('action-bar').should('exist')
+  }
+
+  typeTitle (text) { cy.getBySel('event-title-input').clear().type(text) }
+
+  submit () { cy.getBySel('event-submit').click() }
+
+  uploadCover (file) {
+    cy.getBySel('cover-dropzone').find('input[type="file"]').selectFile(file, { force: true })
+  }
+
+  assertCoverRejected () { cy.getBySel('cover-rejected').should('be.visible') }
+
+  assertCoverThumbnails (count) {
+    if (count === 0) cy.getBySel('cover-dropzone').find('li').should('not.exist')
+    else cy.getBySel('cover-dropzone').find('li').should('have.length', count)
+  }
+
+  addFaq () { cy.getBySel('faq-add').click() }
+
+  assertFaqCount (count) {
+    if (count === 0) cy.getBySel('faq-item').should('not.exist')
+    else cy.getBySel('faq-item').should('have.length', count)
+  }
 }
 
 export const cmsNewEventPage = new CmsNewEventPage()
