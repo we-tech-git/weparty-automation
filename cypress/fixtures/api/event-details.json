@@ -1,0 +1,36 @@
+{
+  "event": {
+    "id": "evt-e2e-001",
+    "name": "Baile de Teste E2E",
+    "description": "O Baile de Teste E2E é o evento fixo usado pela suíte automatizada para validar a aba de detalhes. A noite começa com um welcome set e segue com apresentações de DJs convidados, intervenções artísticas e uma pista preparada para receber o público até o fim da madrugada.\n\nO espaço conta com área externa, praça de alimentação e pontos de hidratação. Recomendamos chegar com antecedência para aproveitar a abertura dos portões e evitar filas na entrada. O evento é destinado ao público maior de 18 anos e a apresentação de documento oficial com foto é obrigatória.\n\nHá estacionamento conveniado nas proximidades e acesso por transporte público a poucos metros da portaria principal. Em caso de dúvidas sobre acessibilidade, cardápio ou horários, consulte a seção de perguntas frequentes abaixo. A organização reforça que a tolerância para entrada após o início das apresentações é limitada e pode variar conforme a lotação do espaço.",
+    "date": "2099-12-31T23:00:00.000Z",
+    "location": "São Paulo, SP",
+    "venueName": "Espaço de Teste E2E",
+    "city": "São Paulo",
+    "organizer": {
+      "id": "host-e2e-001",
+      "name": "Anfitriã Teste",
+      "avatar": ""
+    },
+    "confirmedCount": 12,
+    "likesCount": 5,
+    "isLiked": false,
+    "commentsCount": 0,
+    "categories": ["Festa", "Eletrônica"],
+    "attractions": [
+      { "name": "DJ Teste", "role": "DJ" },
+      { "name": "Banda Teste", "role": "Atração principal" }
+    ],
+    "faq": [
+      {
+        "question": "Qual o horário de abertura?",
+        "answer": "O evento abre às 22h."
+      },
+      {
+        "question": "É permitida a entrada de menores?",
+        "answer": "Não, apenas maiores de 18 anos."
+      }
+    ],
+    "eventInterests": []
+  }
+}
