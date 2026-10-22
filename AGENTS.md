@@ -41,6 +41,10 @@ exemplos de cada uma estão em `docs/`.
    usado por pelo menos um teste.
    [docs/arquitetura-e-organizacao.md](docs/arquitetura-e-organizacao.md)
 
+## Cobertura obrigatória para mudanças de UI (CMS e web-app)
+
+Tela ou componente novo/alterado só é "pronto" com spec aqui: **layout** (desktop e mobile), estados (vazio/erro/carregando), **fluxos de ação**, **retroativo** (o que já existia e foi tocado continua verde) e **segurança** quando toca login, sessão, upload, rota ou dado de usuário (`cms-seguranca.cy.js`). O componente recebe `data-testid` no mesmo PR. CMS: [docs/cms-cenarios.md](docs/cms-cenarios.md). Esta regra espelha o `AGENTS.md` do CMS e do web-app.
+
 ## Processo
 
 - Branch: `<tipo>/WEPARTY-<n>` (igual ao `we-party-web-app`).

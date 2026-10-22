@@ -1,64 +1,84 @@
-import { signupPage } from '../support/pages/SignupPage'
-import { ROUTES } from '../support/constants/routes'
+import { LOCAL_SIGNUP_PASSWORD } from '../support/constants/local';
 
+// Dados do cadastro NÃO ficam em fixture versionada (o repositório é público). A senha vem de
+// CYPRESS_signupPassword; sem ela, usa uma senha descartável que só existe no ambiente local.
 describe('Cadastro', () => {
   beforeEach(() => {
-    signupPage.visit()
-  })
+    cy.visit('/signup');
+  });
 
   it('Deve carregar a pagina de cadastro', () => {
     // Assert
-    signupPage.assertLoaded()
-  })
+    cy.url().should('include', '/signup');
+  });
 
   it('Deve exibir o formulario de cadastro com todos os campos', () => {
     // Assert
-    signupPage.assertFormVisible()
-  })
+    cy.get('#fullName').should('be.visible');
+    cy.get('#email').should('be.visible');
+    cy.get('#password').should('be.visible');
+    cy.get('#confirmPassword').should('be.visible');
+    cy.get('.terms-checkbox').should('exist');
+    cy.get('button[type="submit"]').should('be.visible');
+  });
 
   it('Deve realizar cadastro completo com sucesso', () => {
     // Arrange
-    cy.fixture('credentials').then((creds) => {
-      const signup = creds.signup
+    cy.wrap({ name: 'Test User WeParty', password: Cypress.env('signupPassword') || LOCAL_SIGNUP_PASSWORD }).then((signup) => {
 
       cy.task('getNextEmail').then(({ email, emailUser }) => {
-        signupPage.fillForm({ ...signup, email })
+        cy.get('#fullName').type(signup.name);
+        cy.get('#email').type(email);
+        cy.get('#password').type(signup.password);
+        cy.get('#confirmPassword').type(signup.password);
+        cy.get('.terms-checkbox').check({ force: true });
 
         // Act
-        signupPage.submit()
+        cy.get('button[type="submit"]').click();
 
         // Assert
-        signupPage.assertOn(ROUTES.CONFIRM_EMAIL)
-        signupPage.assertPinInputsVisible()
+        cy.url({ timeout: 15000 }).should('include', '/confirm-email');
 
-        // Act - buscar PIN de verificacao no inbox sharklasers. Nao visitar
-        // /confirm-email de novo: o mount da pagina reenvia o codigo e
-        // invalida o PIN que acabou de ser lido.
-        cy.getVerificationPin(emailUser).then((pin) => {
-          signupPage.fillVerificationPin(pin)
-        })
+        // Act - buscar PIN de verificacao no inbox sharklasers
+        cy.getVerificationPin(emailUser);
+
+        // Ambiente local: abrir /confirm-email reenvia o código (o anterior deixa de
+        // valer), então relê o PIN mais novo. Em produção não revisitamos: o mount
+        // da página também reenvia o código e invalidaria o PIN recém-lido.
+        if (Cypress.env('local')) {
+          cy.visit('/confirm-email');
+          cy.getVerificationPin(emailUser, { minMessages: 2 });
+        }
+        cy.then(() => {
+          const pin = Cypress.env('VERIFICATION_PIN');
+          cy.get('.pin-input').each(($input, index) => {
+            if (index < pin.length) {
+              cy.wrap($input).type(pin[index]);
+            }
+          });
+        });
 
         // Assert
-        signupPage.assertOn(ROUTES.INTEREST)
+        cy.url({ timeout: 15000 }).should('include', '/interest');
 
         // Act - pular interesses
-        signupPage.skipCurrentStep()
+        cy.contains('Pular esta etapa por enquanto').click();
 
         // Assert
-        signupPage.assertOn(ROUTES.ADD_FRIENDS)
+        cy.url({ timeout: 10000 }).should('include', '/add-friends');
 
         // Act - pular amigos
-        signupPage.skipCurrentStep()
+        cy.contains('Pular esta etapa por enquanto').click();
 
         // Assert
-        signupPage.assertOn(ROUTES.CONGRATULATIONS)
+        cy.url({ timeout: 10000 }).should('include', '/congratulations');
 
         // Act - continuar para o feed
-        signupPage.continueToFeed()
+        cy.get('button.continue-btn').click();
 
         // Assert
-        signupPage.assertOn(ROUTES.FEED)
-      })
-    })
-  })
-})
+        cy.url({ timeout: 15000 }).should('include', '/feed');
+      });
+    });
+  });
+});
