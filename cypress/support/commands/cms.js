@@ -9,7 +9,7 @@ Cypress.Commands.add('cmsMockApi', () => {
   cy.fixture('cms/my-events').then((body) => {
     cy.intercept('GET', /\/events\/my-events(\?.*)?$/, { statusCode: 200, body }).as('cmsMyEvents')
   })
-  cy.intercept('GET', /\/interests(\?.*)?$/, { statusCode: 200, body: [] }).as('cmsInterests')
+  cy.intercept('GET', /\/interest(\?.*)?$/, { statusCode: 200, body: { data: [] } }).as('cmsInterests')
 })
 
 /**
@@ -22,14 +22,19 @@ Cypress.Commands.add('cmsVisitLogged', (path, { roles = ['admin'], viewport } = 
     const { token, apiKey, passwordResetToken, googleId, ...user } = data
     void apiKey; void passwordResetToken; void googleId
     const safeUser = { ...user, roles }
-    // O cookie precisa existir ANTES do primeiro request: o proxy.ts do CMS decide o redirect no servidor.
-    cy.setCookie('access_token', token, { domain: new URL(Cypress.env('cmsUrl')).hostname, path: '/' })
-    cy.visit(`${Cypress.env('cmsUrl')}${path}`, {
+    // O cookie precisa existir ANTES do request da rota protegida: o proxy.ts do CMS decide o redirect no servidor.
+    // Ele é gravado host-only (sem Domain), como o writeAuthCookie do app: cookie de domínio não é apagado pelo logout.
+    const url = Cypress.env('cmsUrl')
+    cy.visit(`${url}/login`, {
       onBeforeLoad (win) {
         win.localStorage.setItem('ACCESS_TOKEN', token)
         win.localStorage.setItem('LOGGED_USER', JSON.stringify(safeUser))
         win.localStorage.setItem('we-party-auth', JSON.stringify({ state: { token, user: safeUser }, version: 0 }))
       },
     })
+    cy.window().then((win) => {
+      win.document.cookie = `access_token=${token}; path=/; SameSite=Lax`
+    })
+    cy.visit(`${url}${path}`)
   })
 })
