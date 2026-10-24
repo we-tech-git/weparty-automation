@@ -27,7 +27,7 @@ class CmsLoginPage {
   }
 
   clickGoogle () {
-    cy.getBySel('login-google').click()
+    cy.getBySel('login-google').hydrated().click()
   }
 
   assertBrandPanelVisible (visible = true) {

@@ -10,7 +10,7 @@ class CmsMyEventsPage {
 
   cards () { return cy.getBySel('event-card') }
 
-  selectTab (key) { cy.getBySel(`tab-${key}`).click() }
+  selectTab (key) { cy.getBySel(`tab-${key}`).hydrated().click() }
 
   search (text) { cy.getBySel('events-search').clear().type(text) }
 

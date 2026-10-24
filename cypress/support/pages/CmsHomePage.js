@@ -23,7 +23,7 @@ class CmsHomePage {
   }
 
   clickCreateEvent () {
-    cy.getBySel('home-create-event').click()
+    cy.getBySel('home-create-event').hydrated().click()
   }
 }
 
