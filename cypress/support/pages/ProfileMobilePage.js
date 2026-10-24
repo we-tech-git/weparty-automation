@@ -45,7 +45,7 @@ class ProfileMobilePage {
 
   // ── Abas curtidos/confirmados/preferências (WEPARTY-127): fonte legível ──
   assertTabsReadable () {
-    ;['profile-tab-liked', 'profile-tab-confirmed', 'profile-tab-preferences'].forEach((id) => {
+    ;['profile-tab-liked', 'profile-tab-confirmed', 'profile-tab-settings'].forEach((id) => {
       cy.getBySel(id).then(($el) => {
         expect(Number.parseFloat(getComputedStyle($el[0]).fontSize), `${id} fonte`).to.be.at.least(MIN_TAB_FONT_PX)
       })
