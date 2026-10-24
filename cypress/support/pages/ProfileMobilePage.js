@@ -72,15 +72,15 @@ class ProfileMobilePage {
 
   // ── Rodapé (WEPARTY-130): a última linha não fica sob o menu fixo ──
   scrollToBottom () {
-    cy.scrollTo('bottom', { duration: 400 })
+    cy.getBySel('app-footer-bottom').scrollIntoView()
   }
 
   assertFooterClearOfBottomNav () {
-    cy.getBySel('app-footer-bottom').should('be.visible').then(($footerBottom) => {
-      cy.getBySel('feed-sidebar-nav').then(($nav) => {
-        const footerBottom = $footerBottom[0].getBoundingClientRect()
-        const nav = $nav[0].getBoundingClientRect()
-        expect(footerBottom.bottom, 'fim do rodapé acima do menu').to.be.at.most(nav.top + 1)
+    // a página termina de montar depois do scroll (listas assíncronas): a asserção repete até estabilizar
+    cy.getBySel('feed-sidebar-nav').then(($nav) => {
+      const navTop = $nav[0].getBoundingClientRect().top
+      cy.getBySel('app-footer-bottom').should(($footerBottom) => {
+        expect($footerBottom[0].getBoundingClientRect().bottom, 'fim do rodapé acima do menu').to.be.at.most(navTop + 1)
       })
     })
   }
