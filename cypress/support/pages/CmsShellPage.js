@@ -23,7 +23,7 @@ class CmsShellPage {
   }
 
   logout () {
-    cy.get('[aria-haspopup="menu"][aria-label]').first().click()
+    cy.get('[aria-haspopup="menu"][aria-label]').first().hydrated().click()
     cy.get('[role="menuitem"]').last().click()
   }
 }
