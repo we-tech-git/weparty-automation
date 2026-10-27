@@ -6,7 +6,17 @@ Cypress.Commands.add('cmsMockApi', () => {
   cy.fixture('cms/dashboard').then((body) => {
     cy.intercept('GET', /\/events\/my-dashboard(\?.*)?$/, { statusCode: 200, body }).as('cmsDashboard')
   })
-  cy.fixture('cms/my-events').then((body) => {
+  cy.fixture('cms/my-events').then((fixture) => {
+    // As datas do fixture são relativas a hoje: com data absoluta, "agendado" (startDate futuro) envelhece e os
+    // contadores das abas mudam sozinhos. Offsets em dias: evt-1/2/4 no futuro, evt-3/5 no passado.
+    const DAY = 24 * 60 * 60 * 1000
+    const offsets = { 'evt-1': 2, 'evt-2': 4, 'evt-3': -5, 'evt-4': 30, 'evt-5': -3 }
+    const body = {
+      ...fixture,
+      events: fixture.events.map((event) => (event.id in offsets
+        ? { ...event, startDate: new Date(Date.now() + offsets[event.id] * DAY).toISOString() }
+        : event)),
+    }
     cy.intercept('GET', /\/events\/my-events(\?.*)?$/, { statusCode: 200, body }).as('cmsMyEvents')
   })
   cy.intercept('GET', /\/interest(\?.*)?$/, { statusCode: 200, body: { data: [] } }).as('cmsInterests')
