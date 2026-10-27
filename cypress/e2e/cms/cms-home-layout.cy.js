@@ -48,6 +48,33 @@ suite('CMS - Início do produtor (novo layout)', () => {
     cy.getBySel('kpi-shares').should('contain.text', '—').and('not.contain.text', '0')
   })
 
+  it('CT-257-cms-home-funil-confirmados: a barra Confirmados mostra totalConfirmed, não o total de participações', () => {
+    // Arrange + Act: fixture com totalAttendances = 7 e totalConfirmed = 3
+    cy.viewport(1280, 900)
+    cmsHomePage.visitLogged()
+
+    // Assert
+    cmsHomePage.assertFunnelValue('Confirmados', '3')
+    cmsHomePage.funnelStep('Confirmados').should('not.contain.text', '7')
+  })
+
+  it('CT-258-cms-home-funil-sem-confirmados: sem totalConfirmed na resposta a barra mostra traço e não usa totalAttendances', () => {
+    // Arrange
+    cy.fixture('cms/dashboard').then((body) => {
+      const { totalConfirmed, ...semConfirmados } = body
+      void totalConfirmed
+      cy.intercept('GET', /\/events\/my-dashboard/, { statusCode: 200, body: semConfirmados }).as('cmsDashboard')
+    })
+    cy.intercept('GET', /\/events\/my-events/, { statusCode: 200, body: { events: [], total: 0, page: 1, limit: 100, totalPages: 1 } })
+
+    // Act
+    cy.cmsVisitLogged('/cms/home')
+
+    // Assert
+    cmsHomePage.assertFunnelValue('Confirmados', '—')
+    cmsHomePage.funnelStep('Confirmados').should('not.contain.text', '7').and('not.contain.text', '0')
+  })
+
   it('CT-173-cms-home-criar-evento: o CTA principal leva ao formulário de novo evento', () => {
     // Arrange
     cy.viewport(1280, 900)

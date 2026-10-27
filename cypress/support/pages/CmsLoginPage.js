@@ -13,7 +13,7 @@ class CmsLoginPage {
   }
 
   submit () {
-    cy.getBySel('login-submit').click()
+    cy.getBySel('login-submit').hydrated().click()
   }
 
   toggleRemember (checked = true) {
