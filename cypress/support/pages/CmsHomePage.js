@@ -14,6 +14,15 @@ class CmsHomePage {
     this.kpi(id).should('contain.text', text)
   }
 
+  /** Barra do funil de engajamento pelo rótulo (ex.: 'Confirmados'). */
+  funnelStep (label) {
+    return cy.getBySel('engagement-funnel').contains('div', label)
+  }
+
+  assertFunnelValue (label, text) {
+    this.funnelStep(label).should('contain.text', text)
+  }
+
   assertSections () {
     cy.getBySel('home-kpis').should('be.visible')
     cy.getBySel('spotlight-card').should('be.visible')
