@@ -20,3 +20,7 @@ export const FEED_CARD_VISIBLE_TIMEOUT = 30000
 // Pagina de detalhes: carrega o evento + comentarios + trends + status de
 // curtida/favorito/presenca a partir de producao (todos mockados no spec).
 export const EVENT_DETAILS_VISIBLE_TIMEOUT = 30000
+
+// Perfil: carrega a SPA + perfil, interesses, estatisticas e recomendacoes
+// (leituras mockadas). O primeiro render depende dos chunks da SPA em producao.
+export const PROFILE_VISIBLE_TIMEOUT = 20000

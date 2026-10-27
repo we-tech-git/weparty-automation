@@ -1,0 +1,15 @@
+{
+  "success": true,
+  "message": "Quem eu sigo",
+  "data": {
+    "following": [
+      {
+        "id": "user-rec-2",
+        "name": "Outro Usuário",
+        "username": "outrousuario",
+        "profileImage": "",
+        "isFollowing": true
+      }
+    ]
+  }
+}

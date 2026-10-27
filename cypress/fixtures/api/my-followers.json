@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "message": "Meus seguidores",
+  "data": {
+    "followers": [
+      {
+        "id": "user-rec-1",
+        "name": "Amiga Teste",
+        "username": "amigateste",
+        "profileImage": "",
+        "isFollowing": false
+      },
+      {
+        "id": "user-rec-3",
+        "name": "Banda X",
+        "username": "bandax",
+        "profileImage": "",
+        "isFollowing": true
+      }
+    ]
+  }
+}

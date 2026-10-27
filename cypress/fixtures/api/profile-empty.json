@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "message": "Perfil do usuário",
+  "data": {
+    "id": "profile-user-e2e",
+    "name": "Leonidas Teste",
+    "username": "leonidas",
+    "email": "weparty.test.0001@sharklasers.com",
+    "profilePhoto": "",
+    "profileCoverImage": "",
+    "bio": "Apaixonado por festas e música ao vivo.",
+    "location": "São Paulo, SP",
+    "createdAt": "2024-03-15T12:00:00.000Z",
+    "showLikedEvents": true,
+    "showConfirmedEvents": true,
+    "likedEvents": [],
+    "eventAttendances": []
+  }
+}

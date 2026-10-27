@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "message": "Interesses do usuário",
+  "data": {
+    "interests": [
+      {
+        "id": "int-rock",
+        "name": "Rock"
+      },
+      {
+        "id": "int-sertanejo",
+        "name": "Sertanejo"
+      },
+      {
+        "id": "int-eletronico",
+        "name": "Eletrônico"
+      }
+    ]
+  }
+}

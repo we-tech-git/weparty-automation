@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "message": "Perfil atualizado",
+  "data": {
+    "name": "Leonidas Atualizado",
+    "username": "leonidas",
+    "bio": "Nova bio salva pelo teste E2E."
+  }
+}

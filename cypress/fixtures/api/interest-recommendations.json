@@ -1,0 +1,20 @@
+{
+  "success": true,
+  "message": "Interesses recomendados",
+  "data": {
+    "interests": [
+      {
+        "id": "int-funk",
+        "name": "Funk"
+      },
+      {
+        "id": "int-pagode",
+        "name": "Pagode"
+      },
+      {
+        "id": "int-hiphop",
+        "name": "Hip Hop"
+      }
+    ]
+  }
+}

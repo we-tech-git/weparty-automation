@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "message": "Estatísticas de seguidores",
+  "data": {
+    "followersCount": 42,
+    "followingCount": 7
+  }
+}

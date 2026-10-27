@@ -1,0 +1,59 @@
+{
+  "success": true,
+  "message": "Perfil do usuário",
+  "data": {
+    "id": "profile-user-e2e",
+    "name": "Leonidas Teste",
+    "username": "leonidas",
+    "email": "weparty.test.0001@sharklasers.com",
+    "profilePhoto": "",
+    "profileCoverImage": "",
+    "bio": "Apaixonado por festas e música ao vivo.",
+    "location": "São Paulo, SP",
+    "createdAt": "2024-03-15T12:00:00.000Z",
+    "showLikedEvents": true,
+    "showConfirmedEvents": true,
+    "likedEvents": [
+      {
+        "id": "evt-e2e-001",
+        "name": "Baile de Teste E2E",
+        "description": "Evento fixo usado pelos testes automatizados do perfil.",
+        "date": "2099-12-31T23:00:00.000Z",
+        "location": "São Paulo, SP",
+        "bannerUrl": "",
+        "organizer": {
+          "id": "host-e2e-001",
+          "name": "Anfitriã Teste",
+          "avatar": ""
+        },
+        "confirmedCount": 12,
+        "interestedCount": 34,
+        "likesCount": 5,
+        "eventInterests": []
+      }
+    ],
+    "eventAttendances": [
+      {
+        "id": "evt-e2e-confirmed-001",
+        "eventId": "evt-e2e-confirmed-001",
+        "event": {
+          "id": "evt-e2e-confirmed-001",
+          "name": "Show Confirmado E2E",
+          "description": "Evento confirmado fixo usado pelos testes do perfil.",
+          "date": "2099-11-15T22:00:00.000Z",
+          "location": "Rio de Janeiro, RJ",
+          "bannerUrl": "",
+          "organizer": {
+            "id": "host-e2e-002",
+            "name": "Anfitriã Teste 2",
+            "avatar": ""
+          },
+          "confirmedCount": 8,
+          "interestedCount": 20,
+          "likesCount": 3,
+          "eventInterests": []
+        }
+      }
+    ]
+  }
+}

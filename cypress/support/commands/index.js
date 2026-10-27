@@ -1,6 +1,7 @@
 import './selectors'
 import './auth'
 import './mocks'
+import './profile'
 import './sharklasers'
 import './local'
 import './cms'
