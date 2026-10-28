@@ -98,7 +98,6 @@ a{color:inherit}
 .stat--pass{--tint:rgba(16,185,129,.12)}
 .stat--fail{--tint:rgba(239,68,68,.10)}
 .stat--pending{--tint:rgba(245,158,11,.12)}
-.stat--time{--tint:rgba(20,184,166,.14)}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 18px;margin-bottom:20px;position:sticky;top:12px;z-index:20;backdrop-filter:blur(14px);background:rgba(255,255,255,.86)}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter{border:1px solid var(--line);background:#fff;color:var(--ink-soft);border-radius:999px;padding:9px 14px;font-family:var(--font-body);font-size:.78rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .18s ease}
@@ -203,26 +202,26 @@ a{color:inherit}
     <div class="top-meta">
       <span class="pill pill--brand"><span class="dot"></span>E2E Cypress</span>
       <span class="pill pill--cool">Ambiente: Produção</span>
-      <span class="pill">26 de outubro de 2026 · 16:37</span>
+      <span class="pill">28 de outubro de 2026 · 18:10</span>
     </div>
   </header>
 
   <section class="hero card">
     <div class="hero-copy">
       <span class="eyebrow">Relatório de testes</span>
-      <h1>1 teste precisa de atenção.</h1>
-      <p>109 de 174 testes passaram. Confira abaixo os detalhes antes de seguir para o deploy.</p>
+      <h1>Tudo pronto para a festa.</h1>
+      <p>184 testes executados em 26 specs, sem nenhuma falha. A suíte está verde e pronta para o deploy.</p>
       <div class="hero-badges">
-        <span><b>109</b> passaram</span>
-        <span><b>1</b> falharam</span>
-        <span><b>64</b> pendentes</span>
-        <span><b>12m 33s</b> de execução</span>
+        <span><b>76</b> passaram</span>
+        <span><b>0</b> falharam</span>
+        <span><b>108</b> pendentes</span>
+        <span><b>13m 43s</b> de execução</span>
       </div>
     </div>
     <div class="score">
-      <div class="score-ring" id="scoreRing" style="--pct:63">
+      <div class="score-ring" id="scoreRing" style="--pct:41">
         <div class="score-inner">
-          <b id="scoreValue">63%</b>
+          <b id="scoreValue">41%</b>
           <span>sucesso</span>
         </div>
       </div>
@@ -230,18 +229,18 @@ a{color:inherit}
   </section>
 
   <section class="stats" aria-label="Resumo da execução">
-    <article class="stat card"><small>Total</small><b data-count="174">174</b><span>testes executados</span></article>
-    <article class="stat stat--pass card"><small>Passaram</small><b data-count="109">109</b><span>63% de sucesso</span></article>
-    <article class="stat stat--fail card"><small>Falharam</small><b data-count="1">1</b><span>revisar antes do deploy</span></article>
-    <article class="stat stat--time card"><small>Duração</small><b>12m 33s</b><span>25 specs · 26 de outubro de 2026</span></article>
+    <article class="stat card"><small>Total</small><b data-count="184">184</b><span>testes executados</span></article>
+    <article class="stat stat--pass card"><small>Passaram</small><b data-count="76">76</b><span>41% de sucesso</span></article>
+    <article class="stat stat--fail card"><small>Falharam</small><b data-count="0">0</b><span>nenhuma falha</span></article>
+    <article class="stat stat--pending card"><small>Pendentes</small><b data-count="108">108</b><span>aguardando execução</span></article>
   </section>
 
   <section class="toolbar card" aria-label="Filtros do relatório">
     <div class="filters" role="tablist" aria-label="Filtrar por status">
-      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todos <b>174</b></button>
-      <button class="filter" data-filter="passed" role="tab" aria-selected="false">Passaram <b>109</b></button>
-      <button class="filter" data-filter="failed" role="tab" aria-selected="false">Falharam <b>1</b></button>
-      <button class="filter" data-filter="pending" role="tab" aria-selected="false">Pendentes <b>64</b></button>
+      <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todos <b>184</b></button>
+      <button class="filter" data-filter="passed" role="tab" aria-selected="false">Passaram <b>76</b></button>
+      <button class="filter" data-filter="failed" role="tab" aria-selected="false">Falharam <b>0</b></button>
+      <button class="filter" data-filter="pending" role="tab" aria-selected="false">Pendentes <b>108</b></button>
     </div>
     <label class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
@@ -249,741 +248,10 @@ a{color:inherit}
     </label>
   </section>
 
-  <p class="visible-count" id="visibleCount" aria-live="polite">Mostrando 174 de 174 testes</p>
+  <p class="visible-count" id="visibleCount" aria-live="polite">Mostrando 184 de 184 testes</p>
 
   <section class="specs" id="specs">
-    <section class="spec card" data-spec data-status="passed">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - casca nova nas telas de administração (retroativo)</h2>
-          <p>cypress/e2e/cms/cms-admin-shell.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--passed">Verde</span>
-        <span class="spec-count"><b>6</b>/6 passaram</span>
-        <span class="spec-time">5s</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-control-panel: /cms/admin/control-panel mostra a casca nova com o item do menu ativo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca control panel</span><span class="test-desc">/cms/admin/control-panel mostra a casca nova com o item do menu ativo</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-users: /cms/admin/users mostra a casca nova com o item do menu ativo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca users</span><span class="test-desc">/cms/admin/users mostra a casca nova com o item do menu ativo</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">730ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-reports: /cms/admin/reports mostra a casca nova com o item do menu ativo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca reports</span><span class="test-desc">/cms/admin/reports mostra a casca nova com o item do menu ativo</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">716ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-updates: /cms/admin/updates mostra a casca nova com o item do menu ativo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca updates</span><span class="test-desc">/cms/admin/updates mostra a casca nova com o item do menu ativo</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">730ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - casca nova nas telas de administração (retroativo) ct-188-cms-admin-menu-completo-para-admin: o menu lateral lista produtor e administração para admin">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-188</span> <span class="slug">cms admin menu completo para admin</span><span class="test-desc">o menu lateral lista produtor e administração para admin</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">661ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - casca nova nas telas de administração (retroativo) ct-189-cms-admin-bloqueado-para-nao-admin: quem não é admin é levado ao início ao abrir a administração">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-189</span> <span class="slug">cms admin bloqueado para nao admin</span><span class="test-desc">quem não é admin é levado ao Início ao abrir a administração</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="pending">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - moderação de denúncias (ambiente local)</h2>
-          <p>cypress/e2e/cms/cms-denuncias.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--pending">Pendente</span>
-        <span class="spec-count"><b>0</b>/7 passaram</span>
-        <span class="spec-time">0ms</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-240-denuncias-todas: a página abre em &quot;todas&quot; e &quot;todos&quot; e lista denúncias de mais de um tipo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-240</span> <span class="slug">denuncias todas</span><span class="test-desc">a página abre em &quot;Todas&quot; e &quot;Todos&quot; e lista denúncias de mais de um tipo</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-241-denuncias-eventos: o filtro &quot;eventos&quot; mostra só denúncias de evento">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-241</span> <span class="slug">denuncias eventos</span><span class="test-desc">o filtro &quot;Eventos&quot; mostra só denúncias de evento</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-242-denuncias-comentarios: o filtro &quot;comentários&quot; mostra só denúncias de comentário">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-242</span> <span class="slug">denuncias comentarios</span><span class="test-desc">o filtro &quot;Comentários&quot; mostra só denúncias de comentário</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-243-denuncias-comentarios-de-interesse: o filtro &quot;comentários de interesse&quot; mostra só denúncias desse tipo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-243</span> <span class="slug">denuncias comentarios de interesse</span><span class="test-desc">o filtro &quot;Comentários de interesse&quot; mostra só denúncias desse tipo</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-244-denuncias-pendentes: o filtro &quot;pendentes&quot; mostra só denúncias pendentes">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-244</span> <span class="slug">denuncias pendentes</span><span class="test-desc">o filtro &quot;Pendentes&quot; mostra só denúncias pendentes</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-245-denuncias-aceitas: o filtro &quot;aceitas&quot; mostra só denúncias aceitas">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-245</span> <span class="slug">denuncias aceitas</span><span class="test-desc">o filtro &quot;Aceitas&quot; mostra só denúncias aceitas</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-246-denuncias-rejeitadas: o filtro &quot;rejeitadas&quot; mostra só denúncias rejeitadas">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-246</span> <span class="slug">denuncias rejeitadas</span><span class="test-desc">o filtro &quot;Rejeitadas&quot; mostra só denúncias rejeitadas</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="passed">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - Início do produtor (novo layout)</h2>
-          <p>cypress/e2e/cms/cms-home-layout.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--passed">Verde</span>
-        <span class="spec-count"><b>5</b>/5 passaram</span>
-        <span class="spec-time">5s</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cms - início do produtor (novo layout) ct-170-cms-home-desktop: mostra indicadores, painéis e o menu lateral com início ativo">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-170</span> <span class="slug">cms home desktop</span><span class="test-desc">mostra indicadores, painéis e o menu lateral com Início ativo</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - início do produtor (novo layout) ct-171-cms-home-mobile: no mobile troca o menu lateral pela barra inferior">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-171</span> <span class="slug">cms home mobile</span><span class="test-desc">no mobile troca o menu lateral pela barra inferior</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">532ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - início do produtor (novo layout) ct-172-cms-home-metrica-ausente: métrica indisponível aparece como traço, nunca como zero">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-172</span> <span class="slug">cms home metrica ausente</span><span class="test-desc">métrica indisponível aparece como traço, nunca como zero</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">701ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - início do produtor (novo layout) ct-173-cms-home-criar-evento: o cta principal leva ao formulário de novo evento">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-173</span> <span class="slug">cms home criar evento</span><span class="test-desc">o CTA principal leva ao formulário de novo evento</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - início do produtor (novo layout) ct-174-cms-home-admin-visivel-so-para-admin: seção de administração some para quem não é admin">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-174</span> <span class="slug">cms home admin visivel so para admin</span><span class="test-desc">seção de Administração some para quem não é admin</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">552ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="passed">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - login (novo layout)</h2>
-          <p>cypress/e2e/cms/cms-login-layout.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--passed">Verde</span>
-        <span class="spec-count"><b>10</b>/10 passaram</span>
-        <span class="spec-time">14s</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-160-cms-login-layout-desktop: mostra o painel da marca, o formulário e o login com google">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-160</span> <span class="slug">cms login layout desktop</span><span class="test-desc">mostra o painel da marca, o formulário e o login com Google</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">920ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-161-cms-login-layout-mobile: no mobile o painel lateral some e a faixa da marca aparece">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-161</span> <span class="slug">cms login layout mobile</span><span class="test-desc">no mobile o painel lateral some e a faixa da marca aparece</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">299ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-162-cms-login-ver-senha: o olho alterna a senha entre oculta e visível">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-162</span> <span class="slug">cms login ver senha</span><span class="test-desc">o olho alterna a senha entre oculta e visível</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">979ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-163-cms-login-campos-obrigatorios: enviar vazio mostra os dois erros e não chama a api">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-163</span> <span class="slug">cms login campos obrigatorios</span><span class="test-desc">enviar vazio mostra os dois erros e não chama a API</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">426ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-164-cms-login-email-invalido: e-mail mal formado mostra erro de formato">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-164</span> <span class="slug">cms login email invalido</span><span class="test-desc">e-mail mal formado mostra erro de formato</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-165-cms-login-sucesso: login válido grava a sessão e leva para o início">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-165</span> <span class="slug">cms login sucesso</span><span class="test-desc">login válido grava a sessão e leva para o Início</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">3s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-166-cms-login-credenciais-invalidas: 401 mostra aviso de erro e mantém na tela de login">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-166</span> <span class="slug">cms login credenciais invalidas</span><span class="test-desc">401 mostra aviso de erro e mantém na tela de login</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-167-cms-login-botao-carregando: enquanto envia, o botão fica desabilitado (sem duplo envio)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-167</span> <span class="slug">cms login botao carregando</span><span class="test-desc">enquanto envia, o botão fica desabilitado (sem duplo envio)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-168-cms-login-lembrar-me: marcar guarda só o e-mail; desmarcar remove">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-168</span> <span class="slug">cms login lembrar me</span><span class="test-desc">marcar guarda só o e-mail; desmarcar remove</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - login (novo layout) ct-169-cms-login-google-indisponivel: sem client id configurado, o botão avisa em vez de falhar">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-169</span> <span class="slug">cms login google indisponivel</span><span class="test-desc">sem client id configurado, o botão avisa em vez de falhar</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">424ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="passed">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - Meus eventos (novo layout)</h2>
-          <p>cypress/e2e/cms/cms-my-events-layout.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--passed">Verde</span>
-        <span class="spec-count"><b>6</b>/6 passaram</span>
-        <span class="spec-time">8s</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cms - meus eventos (novo layout) ct-175-cms-eventos-lista-e-abas: lista os cards e mostra a contagem de cada aba">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-175</span> <span class="slug">cms eventos lista e abas</span><span class="test-desc">lista os cards e mostra a contagem de cada aba</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - meus eventos (novo layout) ct-176-cms-eventos-filtro-e-busca: trocar de aba e buscar reduz a lista">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-176</span> <span class="slug">cms eventos filtro e busca</span><span class="test-desc">trocar de aba e buscar reduz a lista</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - meus eventos (novo layout) ct-177-cms-eventos-selecao-em-lote: selecionar um card mostra a barra de lote e limpar esconde">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-177</span> <span class="slug">cms eventos selecao em lote</span><span class="test-desc">selecionar um card mostra a barra de lote e limpar esconde</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">865ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - meus eventos (novo layout) ct-178-cms-eventos-excluir-com-confirmacao: excluir pede confirmação, mostra aviso e não duplica a chamada">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-178</span> <span class="slug">cms eventos excluir com confirmacao</span><span class="test-desc">excluir pede confirmação, mostra aviso e não duplica a chamada</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - meus eventos (novo layout) ct-179-cms-eventos-excluir-erro: falha na api mostra aviso de erro e mantém o card">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-179</span> <span class="slug">cms eventos excluir erro</span><span class="test-desc">falha na API mostra aviso de erro e mantém o card</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - meus eventos (novo layout) ct-180-cms-eventos-mobile: no mobile usa a barra inferior e mantém os cards">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-180</span> <span class="slug">cms eventos mobile</span><span class="test-desc">no mobile usa a barra inferior e mantém os cards</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">755ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="passed">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - Novo evento (novo layout)</h2>
-          <p>cypress/e2e/cms/cms-new-event-layout.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--passed">Verde</span>
-        <span class="spec-count"><b>6</b>/6 passaram</span>
-        <span class="spec-time">9s</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cms - novo evento (novo layout) ct-181-cms-novo-evento-paineis: mostra os painéis, a prévia ao vivo e a barra de publicação">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-181</span> <span class="slug">cms novo evento paineis</span><span class="test-desc">mostra os painéis, a prévia ao vivo e a barra de publicação</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - novo evento (novo layout) ct-182-cms-novo-evento-previa-ao-vivo: o nome digitado aparece na prévia do feed">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-182</span> <span class="slug">cms novo evento previa ao vivo</span><span class="test-desc">o nome digitado aparece na prévia do feed</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - novo evento (novo layout) ct-183-cms-novo-evento-obrigatorios: publicar sem nome/data mostra aviso e não chama a api">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-183</span> <span class="slug">cms novo evento obrigatorios</span><span class="test-desc">publicar sem nome/data mostra aviso e não chama a API</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">979ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - novo evento (novo layout) ct-184-cms-novo-evento-publicar-sem-duplo-envio: publicar desabilita o botão e envia uma única vez">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-184</span> <span class="slug">cms novo evento publicar sem duplo envio</span><span class="test-desc">publicar desabilita o botão e envia uma única vez</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">3s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - novo evento (novo layout) ct-185-cms-novo-evento-faq: adicionar e remover pergunta atualiza a lista">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-185</span> <span class="slug">cms novo evento faq</span><span class="test-desc">adicionar e remover pergunta atualiza a lista</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">931ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - novo evento (novo layout) ct-186-cms-novo-evento-mobile: no mobile a prévia vem antes do formulário e a barra inferior aparece">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-186</span> <span class="slug">cms novo evento mobile</span><span class="test-desc">no mobile a prévia vem antes do formulário e a barra inferior aparece</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">599ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="passed">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - segurança</h2>
-          <p>cypress/e2e/cms/cms-seguranca.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--passed">Verde</span>
-        <span class="spec-count"><b>11</b>/11 passaram</span>
-        <span class="spec-time">15s</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-190-cms-seg-sem-vazamento-no-storage: campos internos da resposta de login não são persistidos (exposição excessiva de dados)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-190</span> <span class="slug">cms seg sem vazamento no storage</span><span class="test-desc">campos internos da resposta de login não são persistidos (exposição excessiva de dados)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">4s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-191-cms-seg-token-fora-da-url: o token e a senha nunca aparecem em url ou query string (dado sensível em query string)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-191</span> <span class="slug">cms seg token fora da url</span><span class="test-desc">o token e a senha nunca aparecem em URL ou query string (dado sensível em query string)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">3s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-192-cms-seg-guard-sem-sessao: rotas do cms redirecionam para o login sem cookie (autorização/falha fechada)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-192</span> <span class="slug">cms seg guard sem sessao</span><span class="test-desc">rotas do CMS redirecionam para o login sem cookie (autorização/falha fechada)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-193-cms-seg-login-logado-redireciona: quem já tem sessão não vê o login e vai para o início">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-193</span> <span class="slug">cms seg login logado redireciona</span><span class="test-desc">quem já tem sessão não vê o login e vai para o Início</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">649ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-194-cms-seg-cabecalhos: respostas têm cabeçalhos de segurança e não expõem x-powered-by">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-194</span> <span class="slug">cms seg cabecalhos</span><span class="test-desc">respostas têm cabeçalhos de segurança e não expõem X-Powered-By</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">136ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-195-cms-seg-logout-limpa-sessao: sair remove token do storage e o cookie, e volta ao login (token em storage)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-195</span> <span class="slug">cms seg logout limpa sessao</span><span class="test-desc">sair remove token do storage e o cookie, e volta ao login (token em storage)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-196-cms-seg-401-derruba-sessao: resposta 401 da api limpa a sessão e volta ao login (sessão expirada)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-196</span> <span class="slug">cms seg 401 derruba sessao</span><span class="test-desc">resposta 401 da API limpa a sessão e volta ao login (sessão expirada)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">960ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-197-cms-seg-xss-titulo-de-evento: título com html é exibido como texto, sem executar script (xss)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-197</span> <span class="slug">cms seg xss titulo de evento</span><span class="test-desc">título com HTML é exibido como texto, sem executar script (XSS)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">801ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-198-cms-seg-upload-svg-rejeitado: a capa não aceita svg (upload de svg executa script)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-198</span> <span class="slug">cms seg upload svg rejeitado</span><span class="test-desc">a capa não aceita SVG (upload de SVG executa script)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">784ms</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-199-cms-seg-upload-grande-rejeitado: imagem acima de 5 mb é rejeitada (limite de tamanho)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-199</span> <span class="slug">cms seg upload grande rejeitado</span><span class="test-desc">imagem acima de 5 MB é rejeitada (limite de tamanho)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
-    </div>
-    
-  </li><li class="test test--passed" data-status="passed" data-search="cms - segurança ct-200-cms-seg-links-externos: todo link com target=_blank tem rel noopener noreferrer (tabnabbing)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-200</span> <span class="slug">cms seg links externos</span><span class="test-desc">todo link com target=_blank tem rel noopener noreferrer (tabnabbing)</span></div>
-      </div>
-      <span class="test-status">Passou</span>
-      <span class="test-duration">1s</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="pending">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - smoke (ambiente local)</h2>
-          <p>cypress/e2e/cms/cms-smoke.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--pending">Pendente</span>
-        <span class="spec-count"><b>0</b>/3 passaram</span>
-        <span class="spec-time">0ms</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - smoke (ambiente local) ct-150-cms-login-renderiza: a página de login do cms carrega com e-mail e senha">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-150</span> <span class="slug">cms login renderiza</span><span class="test-desc">a página de login do CMS carrega com e-mail e senha</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - smoke (ambiente local) ct-151-cms-login-admin-usa-api-local: login de admin no cms funciona e só fala com a api local">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-151</span> <span class="slug">cms login admin usa api local</span><span class="test-desc">login de admin no CMS funciona e só fala com a API local</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - smoke (ambiente local) ct-152-cms-contador-descricao: o contador 0/600 da descrição do evento acompanha a digitação e respeita o limite (weparty-186)">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-152</span> <span class="slug">cms contador descricao</span><span class="test-desc">o contador 0/600 da descrição do evento acompanha a digitação e respeita o limite (WEPARTY-186)</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="pending">
-    <header class="spec-head">
-      <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">C</span>
-        <div>
-          <h2>CMS - Social posts (fila de aprovação e publicados)</h2>
-          <p>cypress/e2e/cms/cms-social-posts.cy.js</p>
-        </div>
-      </div>
-      <div class="spec-summary">
-        <span class="badge badge--pending">Pendente</span>
-        <span class="spec-count"><b>0</b>/2 passaram</span>
-        <span class="spec-time">0ms</span>
-      </div>
-      <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
-      </div>
-    </header>
-    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - social posts (fila de aprovação e publicados) ct-180-cms-social-fila-e-xtext: o post pendente aparece na fila e a prévia mostra &quot;texto para o x&quot;">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-180</span> <span class="slug">cms social fila e xtext</span><span class="test-desc">o post pendente aparece na fila e a prévia mostra &quot;Texto para o X&quot;</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li><li class="test test--pending" data-status="pending" data-search="cms - social posts (fila de aprovação e publicados) ct-181-cms-social-publicados: depois de publicado, o post aparece na aba publicados com &quot;ver post&quot;">
-    <div class="test-row">
-      <span class="test-dot" aria-hidden="true"></span>
-      <div class="test-main">
-        <div class="test-title"><span class="ct">CT-181</span> <span class="slug">cms social publicados</span><span class="test-desc">depois de publicado, o post aparece na aba Publicados com &quot;ver post&quot;</span></div>
-      </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
-    </div>
-    
-  </li></ul>
-  </section><section class="spec card" data-spec data-status="pending">
+    <section class="spec card" data-spec data-status="pending">
     <header class="spec-head">
       <div class="spec-id">
         <span class="spec-avatar" aria-hidden="true">A</span>
@@ -1441,6 +709,836 @@ a{color:inherit}
   </section><section class="spec card" data-spec data-status="pending">
     <header class="spec-head">
       <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">P</span>
+        <div>
+          <h2>Pós-deploy - produção (somente leitura)</h2>
+          <p>cypress/e2e/postdeploy/smoke-producao.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/8 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-160-prod-api-saude: a api responde saudável e publica o swagger">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-160</span> <span class="slug">prod api saude</span><span class="test-desc">a API responde saudável e publica o Swagger</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-161-prod-api-login-e-leitura: login real devolve token e as listas públicas respondem">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-161</span> <span class="slug">prod api login e leitura</span><span class="test-desc">login real devolve token e as listas públicas respondem</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-162-prod-webapp-login-e-feed: o web-app abre, aceita o login e mostra o feed com eventos">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-162</span> <span class="slug">prod webapp login e feed</span><span class="test-desc">o web-app abre, aceita o login e mostra o feed com eventos</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-163-prod-cms-login: o cms abre, aceita o login do admin e sai da tela de login">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-163</span> <span class="slug">prod cms login</span><span class="test-desc">o CMS abre, aceita o login do admin e sai da tela de login</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-164-prod-social-posts-guard: as rotas de social-posts existem e recusam acesso sem chave (401, não 404/500)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-164</span> <span class="slug">prod social posts guard</span><span class="test-desc">as rotas de social-posts existem e recusam acesso sem chave (401, não 404/500)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-165-prod-social-posts-chave: com a chave de integração, a lista de aprovados responde (somente leitura)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-165</span> <span class="slug">prod social posts chave</span><span class="test-desc">com a chave de integração, a lista de aprovados responde (somente leitura)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-166-prod-social-posts-admin: o admin lista a fila e os publicados (somente leitura)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-166</span> <span class="slug">prod social posts admin</span><span class="test-desc">o admin lista a fila e os publicados (somente leitura)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-167-prod-cms-social-posts: a tela de social posts do cms abre e a aba publicados carrega sem erro">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-167</span> <span class="slug">prod cms social posts</span><span class="test-desc">a tela de social posts do CMS abre e a aba Publicados carrega sem erro</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - casca nova nas telas de administração (retroativo)</h2>
+          <p>cypress/e2e/cms/cms-admin-shell.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/6 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-control-panel: /cms/admin/control-panel mostra a casca nova com o item do menu ativo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca control panel</span><span class="test-desc">/cms/admin/control-panel mostra a casca nova com o item do menu ativo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-users: /cms/admin/users mostra a casca nova com o item do menu ativo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca users</span><span class="test-desc">/cms/admin/users mostra a casca nova com o item do menu ativo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-reports: /cms/admin/reports mostra a casca nova com o item do menu ativo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca reports</span><span class="test-desc">/cms/admin/reports mostra a casca nova com o item do menu ativo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - casca nova nas telas de administração (retroativo) ct-187-cms-admin-casca-updates: /cms/admin/updates mostra a casca nova com o item do menu ativo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-187</span> <span class="slug">cms admin casca updates</span><span class="test-desc">/cms/admin/updates mostra a casca nova com o item do menu ativo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - casca nova nas telas de administração (retroativo) ct-188-cms-admin-menu-completo-para-admin: o menu lateral lista produtor e administração para admin">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-188</span> <span class="slug">cms admin menu completo para admin</span><span class="test-desc">o menu lateral lista produtor e administração para admin</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - casca nova nas telas de administração (retroativo) ct-189-cms-admin-bloqueado-para-nao-admin: quem não é admin é levado ao início ao abrir a administração">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-189</span> <span class="slug">cms admin bloqueado para nao admin</span><span class="test-desc">quem não é admin é levado ao Início ao abrir a administração</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - moderação de denúncias (ambiente local)</h2>
+          <p>cypress/e2e/cms/cms-denuncias.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/7 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-240-denuncias-todas: a página abre em &quot;todas&quot; e &quot;todos&quot; e lista denúncias de mais de um tipo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-240</span> <span class="slug">denuncias todas</span><span class="test-desc">a página abre em &quot;Todas&quot; e &quot;Todos&quot; e lista denúncias de mais de um tipo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-241-denuncias-eventos: o filtro &quot;eventos&quot; mostra só denúncias de evento">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-241</span> <span class="slug">denuncias eventos</span><span class="test-desc">o filtro &quot;Eventos&quot; mostra só denúncias de evento</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-242-denuncias-comentarios: o filtro &quot;comentários&quot; mostra só denúncias de comentário">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-242</span> <span class="slug">denuncias comentarios</span><span class="test-desc">o filtro &quot;Comentários&quot; mostra só denúncias de comentário</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-243-denuncias-comentarios-de-interesse: o filtro &quot;comentários de interesse&quot; mostra só denúncias desse tipo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-243</span> <span class="slug">denuncias comentarios de interesse</span><span class="test-desc">o filtro &quot;Comentários de interesse&quot; mostra só denúncias desse tipo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-244-denuncias-pendentes: o filtro &quot;pendentes&quot; mostra só denúncias pendentes">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-244</span> <span class="slug">denuncias pendentes</span><span class="test-desc">o filtro &quot;Pendentes&quot; mostra só denúncias pendentes</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-245-denuncias-aceitas: o filtro &quot;aceitas&quot; mostra só denúncias aceitas">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-245</span> <span class="slug">denuncias aceitas</span><span class="test-desc">o filtro &quot;Aceitas&quot; mostra só denúncias aceitas</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - moderação de denúncias (ambiente local) ct-246-denuncias-rejeitadas: o filtro &quot;rejeitadas&quot; mostra só denúncias rejeitadas">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-246</span> <span class="slug">denuncias rejeitadas</span><span class="test-desc">o filtro &quot;Rejeitadas&quot; mostra só denúncias rejeitadas</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - Início do produtor (novo layout)</h2>
+          <p>cypress/e2e/cms/cms-home-layout.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/5 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - início do produtor (novo layout) ct-170-cms-home-desktop: mostra indicadores, painéis e o menu lateral com início ativo">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-170</span> <span class="slug">cms home desktop</span><span class="test-desc">mostra indicadores, painéis e o menu lateral com Início ativo</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - início do produtor (novo layout) ct-171-cms-home-mobile: no mobile troca o menu lateral pela barra inferior">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-171</span> <span class="slug">cms home mobile</span><span class="test-desc">no mobile troca o menu lateral pela barra inferior</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - início do produtor (novo layout) ct-172-cms-home-metrica-ausente: métrica indisponível aparece como traço, nunca como zero">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-172</span> <span class="slug">cms home metrica ausente</span><span class="test-desc">métrica indisponível aparece como traço, nunca como zero</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - início do produtor (novo layout) ct-173-cms-home-criar-evento: o cta principal leva ao formulário de novo evento">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-173</span> <span class="slug">cms home criar evento</span><span class="test-desc">o CTA principal leva ao formulário de novo evento</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - início do produtor (novo layout) ct-174-cms-home-admin-visivel-so-para-admin: seção de administração some para quem não é admin">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-174</span> <span class="slug">cms home admin visivel so para admin</span><span class="test-desc">seção de Administração some para quem não é admin</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - login (novo layout)</h2>
+          <p>cypress/e2e/cms/cms-login-layout.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/10 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-160-cms-login-layout-desktop: mostra o painel da marca, o formulário e o login com google">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-160</span> <span class="slug">cms login layout desktop</span><span class="test-desc">mostra o painel da marca, o formulário e o login com Google</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-161-cms-login-layout-mobile: no mobile o painel lateral some e a faixa da marca aparece">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-161</span> <span class="slug">cms login layout mobile</span><span class="test-desc">no mobile o painel lateral some e a faixa da marca aparece</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-162-cms-login-ver-senha: o olho alterna a senha entre oculta e visível">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-162</span> <span class="slug">cms login ver senha</span><span class="test-desc">o olho alterna a senha entre oculta e visível</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-163-cms-login-campos-obrigatorios: enviar vazio mostra os dois erros e não chama a api">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-163</span> <span class="slug">cms login campos obrigatorios</span><span class="test-desc">enviar vazio mostra os dois erros e não chama a API</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-164-cms-login-email-invalido: e-mail mal formado mostra erro de formato">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-164</span> <span class="slug">cms login email invalido</span><span class="test-desc">e-mail mal formado mostra erro de formato</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-165-cms-login-sucesso: login válido grava a sessão e leva para o início">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-165</span> <span class="slug">cms login sucesso</span><span class="test-desc">login válido grava a sessão e leva para o Início</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-166-cms-login-credenciais-invalidas: 401 mostra aviso de erro e mantém na tela de login">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-166</span> <span class="slug">cms login credenciais invalidas</span><span class="test-desc">401 mostra aviso de erro e mantém na tela de login</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-167-cms-login-botao-carregando: enquanto envia, o botão fica desabilitado (sem duplo envio)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-167</span> <span class="slug">cms login botao carregando</span><span class="test-desc">enquanto envia, o botão fica desabilitado (sem duplo envio)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-168-cms-login-lembrar-me: marcar guarda só o e-mail; desmarcar remove">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-168</span> <span class="slug">cms login lembrar me</span><span class="test-desc">marcar guarda só o e-mail; desmarcar remove</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - login (novo layout) ct-169-cms-login-google-indisponivel: sem client id configurado, o botão avisa em vez de falhar">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-169</span> <span class="slug">cms login google indisponivel</span><span class="test-desc">sem client id configurado, o botão avisa em vez de falhar</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - Meus eventos (novo layout)</h2>
+          <p>cypress/e2e/cms/cms-my-events-layout.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/6 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - meus eventos (novo layout) ct-175-cms-eventos-lista-e-abas: lista os cards e mostra a contagem de cada aba">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-175</span> <span class="slug">cms eventos lista e abas</span><span class="test-desc">lista os cards e mostra a contagem de cada aba</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - meus eventos (novo layout) ct-176-cms-eventos-filtro-e-busca: trocar de aba e buscar reduz a lista">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-176</span> <span class="slug">cms eventos filtro e busca</span><span class="test-desc">trocar de aba e buscar reduz a lista</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - meus eventos (novo layout) ct-177-cms-eventos-selecao-em-lote: selecionar um card mostra a barra de lote e limpar esconde">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-177</span> <span class="slug">cms eventos selecao em lote</span><span class="test-desc">selecionar um card mostra a barra de lote e limpar esconde</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - meus eventos (novo layout) ct-178-cms-eventos-excluir-com-confirmacao: excluir pede confirmação, mostra aviso e não duplica a chamada">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-178</span> <span class="slug">cms eventos excluir com confirmacao</span><span class="test-desc">excluir pede confirmação, mostra aviso e não duplica a chamada</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - meus eventos (novo layout) ct-179-cms-eventos-excluir-erro: falha na api mostra aviso de erro e mantém o card">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-179</span> <span class="slug">cms eventos excluir erro</span><span class="test-desc">falha na API mostra aviso de erro e mantém o card</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - meus eventos (novo layout) ct-180-cms-eventos-mobile: no mobile usa a barra inferior e mantém os cards">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-180</span> <span class="slug">cms eventos mobile</span><span class="test-desc">no mobile usa a barra inferior e mantém os cards</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - Novo evento (novo layout)</h2>
+          <p>cypress/e2e/cms/cms-new-event-layout.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/6 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - novo evento (novo layout) ct-181-cms-novo-evento-paineis: mostra os painéis, a prévia ao vivo e a barra de publicação">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-181</span> <span class="slug">cms novo evento paineis</span><span class="test-desc">mostra os painéis, a prévia ao vivo e a barra de publicação</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - novo evento (novo layout) ct-182-cms-novo-evento-previa-ao-vivo: o nome digitado aparece na prévia do feed">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-182</span> <span class="slug">cms novo evento previa ao vivo</span><span class="test-desc">o nome digitado aparece na prévia do feed</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - novo evento (novo layout) ct-183-cms-novo-evento-obrigatorios: publicar sem nome/data mostra aviso e não chama a api">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-183</span> <span class="slug">cms novo evento obrigatorios</span><span class="test-desc">publicar sem nome/data mostra aviso e não chama a API</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - novo evento (novo layout) ct-184-cms-novo-evento-publicar-sem-duplo-envio: publicar desabilita o botão e envia uma única vez">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-184</span> <span class="slug">cms novo evento publicar sem duplo envio</span><span class="test-desc">publicar desabilita o botão e envia uma única vez</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - novo evento (novo layout) ct-185-cms-novo-evento-faq: adicionar e remover pergunta atualiza a lista">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-185</span> <span class="slug">cms novo evento faq</span><span class="test-desc">adicionar e remover pergunta atualiza a lista</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - novo evento (novo layout) ct-186-cms-novo-evento-mobile: no mobile a prévia vem antes do formulário e a barra inferior aparece">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-186</span> <span class="slug">cms novo evento mobile</span><span class="test-desc">no mobile a prévia vem antes do formulário e a barra inferior aparece</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - segurança</h2>
+          <p>cypress/e2e/cms/cms-seguranca.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/11 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-190-cms-seg-sem-vazamento-no-storage: campos internos da resposta de login não são persistidos (exposição excessiva de dados)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-190</span> <span class="slug">cms seg sem vazamento no storage</span><span class="test-desc">campos internos da resposta de login não são persistidos (exposição excessiva de dados)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-191-cms-seg-token-fora-da-url: o token e a senha nunca aparecem em url ou query string (dado sensível em query string)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-191</span> <span class="slug">cms seg token fora da url</span><span class="test-desc">o token e a senha nunca aparecem em URL ou query string (dado sensível em query string)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-192-cms-seg-guard-sem-sessao: rotas do cms redirecionam para o login sem cookie (autorização/falha fechada)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-192</span> <span class="slug">cms seg guard sem sessao</span><span class="test-desc">rotas do CMS redirecionam para o login sem cookie (autorização/falha fechada)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-193-cms-seg-login-logado-redireciona: quem já tem sessão não vê o login e vai para o início">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-193</span> <span class="slug">cms seg login logado redireciona</span><span class="test-desc">quem já tem sessão não vê o login e vai para o Início</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-194-cms-seg-cabecalhos: respostas têm cabeçalhos de segurança e não expõem x-powered-by">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-194</span> <span class="slug">cms seg cabecalhos</span><span class="test-desc">respostas têm cabeçalhos de segurança e não expõem X-Powered-By</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-195-cms-seg-logout-limpa-sessao: sair remove token do storage e o cookie, e volta ao login (token em storage)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-195</span> <span class="slug">cms seg logout limpa sessao</span><span class="test-desc">sair remove token do storage e o cookie, e volta ao login (token em storage)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-196-cms-seg-401-derruba-sessao: resposta 401 da api limpa a sessão e volta ao login (sessão expirada)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-196</span> <span class="slug">cms seg 401 derruba sessao</span><span class="test-desc">resposta 401 da API limpa a sessão e volta ao login (sessão expirada)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-197-cms-seg-xss-titulo-de-evento: título com html é exibido como texto, sem executar script (xss)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-197</span> <span class="slug">cms seg xss titulo de evento</span><span class="test-desc">título com HTML é exibido como texto, sem executar script (XSS)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-198-cms-seg-upload-svg-rejeitado: a capa não aceita svg (upload de svg executa script)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-198</span> <span class="slug">cms seg upload svg rejeitado</span><span class="test-desc">a capa não aceita SVG (upload de SVG executa script)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-199-cms-seg-upload-grande-rejeitado: imagem acima de 5 mb é rejeitada (limite de tamanho)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-199</span> <span class="slug">cms seg upload grande rejeitado</span><span class="test-desc">imagem acima de 5 MB é rejeitada (limite de tamanho)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - segurança ct-200-cms-seg-links-externos: todo link com target=_blank tem rel noopener noreferrer (tabnabbing)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-200</span> <span class="slug">cms seg links externos</span><span class="test-desc">todo link com target=_blank tem rel noopener noreferrer (tabnabbing)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - smoke (ambiente local)</h2>
+          <p>cypress/e2e/cms/cms-smoke.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/3 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - smoke (ambiente local) ct-150-cms-login-renderiza: a página de login do cms carrega com e-mail e senha">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-150</span> <span class="slug">cms login renderiza</span><span class="test-desc">a página de login do CMS carrega com e-mail e senha</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - smoke (ambiente local) ct-151-cms-login-admin-usa-api-local: login de admin no cms funciona e só fala com a api local">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-151</span> <span class="slug">cms login admin usa api local</span><span class="test-desc">login de admin no CMS funciona e só fala com a API local</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - smoke (ambiente local) ct-152-cms-contador-descricao: o contador 0/600 da descrição do evento acompanha a digitação e respeita o limite (weparty-186)">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-152</span> <span class="slug">cms contador descricao</span><span class="test-desc">o contador 0/600 da descrição do evento acompanha a digitação e respeita o limite (WEPARTY-186)</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
+        <span class="spec-avatar" aria-hidden="true">C</span>
+        <div>
+          <h2>CMS - Social posts (fila de aprovação e publicados)</h2>
+          <p>cypress/e2e/cms/cms-social-posts.cy.js</p>
+        </div>
+      </div>
+      <div class="spec-summary">
+        <span class="badge badge--pending">Pendente</span>
+        <span class="spec-count"><b>0</b>/2 passaram</span>
+        <span class="spec-time">0ms</span>
+      </div>
+      <div class="spec-track" aria-hidden="true">
+        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+      </div>
+    </header>
+    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="cms - social posts (fila de aprovação e publicados) ct-180-cms-social-fila-e-xtext: o post pendente aparece na fila e a prévia mostra &quot;texto para o x&quot;">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-180</span> <span class="slug">cms social fila e xtext</span><span class="test-desc">o post pendente aparece na fila e a prévia mostra &quot;Texto para o X&quot;</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li><li class="test test--pending" data-status="pending" data-search="cms - social posts (fila de aprovação e publicados) ct-181-cms-social-publicados: depois de publicado, o post aparece na aba publicados com &quot;ver post&quot;">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-181</span> <span class="slug">cms social publicados</span><span class="test-desc">depois de publicado, o post aparece na aba Publicados com &quot;ver post&quot;</span></div>
+      </div>
+      <span class="test-status">Pendente</span>
+      <span class="test-duration">0ms</span>
+    </div>
+    
+  </li></ul>
+  </section><section class="spec card" data-spec data-status="pending">
+    <header class="spec-head">
+      <div class="spec-id">
         <span class="spec-avatar" aria-hidden="true">B</span>
         <div>
           <h2>Botão de denunciar (ambiente local)</h2>
@@ -1509,7 +1607,7 @@ a{color:inherit}
       <div class="spec-summary">
         <span class="badge badge--passed">Verde</span>
         <span class="spec-count"><b>14</b>/14 passaram</span>
-        <span class="spec-time">2m 24s</span>
+        <span class="spec-time">2m 49s</span>
       </div>
       <div class="spec-track" aria-hidden="true">
         <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
@@ -1532,7 +1630,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-031</span> <span class="slug">detalhes favoritar</span><span class="test-desc">favoritar o evento atualiza o botao para favoritado</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">6s</span>
+      <span class="test-duration">7s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-032-detalhes-compartilhar: compartilhar abre o dialogo com o nome do evento">
@@ -1582,7 +1680,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-036</span> <span class="slug">detalhes descurtir</span><span class="test-desc">descurtir o evento restaura o contador inicial</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">11s</span>
+      <span class="test-duration">12s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-037-detalhes-seguir-organizador: seguir o organizador atualiza o botao para seguindo">
@@ -1592,7 +1690,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-037</span> <span class="slug">detalhes seguir organizador</span><span class="test-desc">seguir o organizador atualiza o botao para seguindo</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">9s</span>
+      <span class="test-duration">10s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-038-detalhes-ler-mais: expandir e recolher a descricao completa do evento">
@@ -1602,7 +1700,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-038</span> <span class="slug">detalhes ler mais</span><span class="test-desc">expandir e recolher a descricao completa do evento</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">10s</span>
+      <span class="test-duration">12s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-039-detalhes-faq: expandir e recolher a resposta de uma pergunta frequente">
@@ -1612,7 +1710,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-039</span> <span class="slug">detalhes faq</span><span class="test-desc">expandir e recolher a resposta de uma pergunta frequente</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">12s</span>
+      <span class="test-duration">15s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-040-detalhes-como-chegar: botao de rota abre o google maps em nova aba">
@@ -1622,7 +1720,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-040</span> <span class="slug">detalhes como chegar</span><span class="test-desc">botao de rota abre o Google Maps em nova aba</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">9s</span>
+      <span class="test-duration">15s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-041-detalhes-mobile-barra-inferior: confirmar presenca pela barra fixa no mobile">
@@ -1632,7 +1730,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-041</span> <span class="slug">detalhes mobile barra inferior</span><span class="test-desc">confirmar presenca pela barra fixa no mobile</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">10s</span>
+      <span class="test-duration">15s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-042-detalhes-erro-carregamento: falha da api exibe estado de erro com retry">
@@ -1642,7 +1740,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-042</span> <span class="slug">detalhes erro carregamento</span><span class="test-desc">falha da API exibe estado de erro com retry</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">10s</span>
+      <span class="test-duration">15s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="detalhes do evento ct-043-detalhes-retry-carregamento: tentar novamente recarrega os detalhes do evento">
@@ -1652,7 +1750,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-043</span> <span class="slug">detalhes retry carregamento</span><span class="test-desc">tentar novamente recarrega os detalhes do evento</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">11s</span>
+      <span class="test-duration">15s</span>
     </div>
     
   </li></ul>
@@ -1707,7 +1805,7 @@ a{color:inherit}
       <div class="spec-summary">
         <span class="badge badge--passed">Verde</span>
         <span class="spec-count"><b>20</b>/20 passaram</span>
-        <span class="spec-time">3m 25s</span>
+        <span class="spec-time">3m 41s</span>
       </div>
       <div class="spec-track" aria-hidden="true">
         <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
@@ -1720,7 +1818,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-017</span> <span class="slug">feed verificar todos cards</span><span class="test-desc">feed carrega os 5 eventos mockados como cards</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">9s</span>
+      <span class="test-duration">19s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-022-feed-estado-inicial-card: verificar estado inicial do card antes de qualquer interação">
@@ -1730,7 +1828,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-022</span> <span class="slug">feed estado inicial card</span><span class="test-desc">verificar estado inicial do card antes de qualquer interação</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">9s</span>
+      <span class="test-duration">14s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-018-feed-verificar-dados-card: card exibe título, data, local e nome do organizador">
@@ -1760,7 +1858,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-010</span> <span class="slug">feed curtir evento</span><span class="test-desc">curtir um evento do feed atualiza o coração e o contador</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">12s</span>
+      <span class="test-duration">11s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-013-feed-descurtir-evento: descurtir um evento que estava curtido restaura o estado inicial">
@@ -1770,7 +1868,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-013</span> <span class="slug">feed descurtir evento</span><span class="test-desc">descurtir um evento que estava curtido restaura o estado inicial</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">10s</span>
+      <span class="test-duration">11s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-014-feed-curtir-segundo-evento: curtir o segundo card do feed atualiza apenas o seu estado">
@@ -1800,7 +1898,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-019</span> <span class="slug">feed curtir sem alterar outros</span><span class="test-desc">curtir um card não altera o estado de outro</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">11s</span>
+      <span class="test-duration">10s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-024-feed-dois-cliques-rapidos-like: dois cliques rápidos no like não causam estado inconsistente">
@@ -1810,7 +1908,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-024</span> <span class="slug">feed dois cliques rapidos like</span><span class="test-desc">dois cliques rápidos no like não causam estado inconsistente</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">10s</span>
+      <span class="test-duration">11s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-026-feed-falha-ao-curtir: erro da api ao curtir mantém o estado original do card">
@@ -1830,7 +1928,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-011</span> <span class="slug">feed ver comentarios</span><span class="test-desc">abrir os comentários do card exibe a área de comentários inline</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">10s</span>
+      <span class="test-duration">11s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-015-feed-fechar-comentarios: fechar o painel de comentários após abri-lo">
@@ -1840,7 +1938,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-015</span> <span class="slug">feed fechar comentarios</span><span class="test-desc">fechar o painel de comentários após abri-lo</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">12s</span>
+      <span class="test-duration">10s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-027-feed-isolamento-comentarios: abrir e fechar comentários funciona independentemente para cada card">
@@ -1850,7 +1948,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-027</span> <span class="slug">feed isolamento comentarios</span><span class="test-desc">abrir e fechar comentários funciona independentemente para cada card</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">11s</span>
+      <span class="test-duration">12s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="feed ct-029-feed-alternar-painel-comentarios: alternar o toggle entre cards alterna o painel de comentários">
@@ -1978,7 +2076,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-250</span> <span class="slug">perfil dados basicos</span><span class="test-desc">perfil exibe nome, username, bio, entrada, interesses e estatísticas</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">11s</span>
+      <span class="test-duration">13s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="perfil do usuário ct-251-perfil-aba-curtidos: a aba curtidos abre por padrão e lista os eventos curtidos">
@@ -1988,7 +2086,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-251</span> <span class="slug">perfil aba curtidos</span><span class="test-desc">a aba Curtidos abre por padrão e lista os eventos curtidos</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">9s</span>
+      <span class="test-duration">7s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="perfil do usuário ct-252-perfil-aba-confirmados: trocar para confirmados lista os eventos confirmados e persiste a aba na url">
@@ -2078,7 +2176,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-260</span> <span class="slug">perfil buscar recomendacao</span><span class="test-desc">buscar em Quem seguir filtra a lista de recomendações</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">11s</span>
+      <span class="test-duration">10s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="perfil do usuário ct-261-perfil-compartilhar: compartilhar o perfil abre o sharesheet com o título do perfil">
@@ -2098,106 +2196,126 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-262</span> <span class="slug">perfil mobile</span><span class="test-desc">o perfil mantém dados e abas visíveis sem overflow horizontal em retrato e paisagem</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">9s</span>
+      <span class="test-duration">10s</span>
     </div>
     
   </li></ul>
-  </section><section class="spec card" data-spec data-status="pending">
+  </section><section class="spec card" data-spec data-status="passed">
     <header class="spec-head">
       <div class="spec-id">
-        <span class="spec-avatar" aria-hidden="true">P</span>
+        <span class="spec-avatar" aria-hidden="true">T</span>
         <div>
-          <h2>Pós-deploy - produção (somente leitura)</h2>
-          <p>cypress/e2e/postdeploy/smoke-producao.cy.js</p>
+          <h2>Top eventos</h2>
+          <p>cypress/e2e/private/top-eventos.cy.js</p>
         </div>
       </div>
       <div class="spec-summary">
-        <span class="badge badge--pending">Pendente</span>
-        <span class="spec-count"><b>0</b>/8 passaram</span>
-        <span class="spec-time">0ms</span>
+        <span class="badge badge--passed">Verde</span>
+        <span class="spec-count"><b>10</b>/10 passaram</span>
+        <span class="spec-time">1m 43s</span>
       </div>
       <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--pending" data-width="0" style="width:0%"></span>
+        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
       </div>
     </header>
-    <ul class="tests"><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-160-prod-api-saude: a api responde saudável e publica o swagger">
+    <ul class="tests"><li class="test test--passed" data-status="passed" data-search="top eventos ct-263-top-eventos-acessar: acessar /feed?tab=top-events carrega o ranking">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-160</span> <span class="slug">prod api saude</span><span class="test-desc">a API responde saudável e publica o Swagger</span></div>
+        <div class="test-title"><span class="ct">CT-263</span> <span class="slug">top eventos acessar</span><span class="test-desc">acessar /feed?tab=top-events carrega o ranking</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">12s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-161-prod-api-login-e-leitura: login real devolve token e as listas públicas respondem">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-264-top-eventos-navegacao-menu: o menu lateral leva para top eventos e atualiza a url">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-161</span> <span class="slug">prod api login e leitura</span><span class="test-desc">login real devolve token e as listas públicas respondem</span></div>
+        <div class="test-title"><span class="ct">CT-264</span> <span class="slug">top eventos navegacao menu</span><span class="test-desc">o menu lateral leva para Top eventos e atualiza a URL</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">7s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-162-prod-webapp-login-e-feed: o web-app abre, aceita o login e mostra o feed com eventos">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-265-top-eventos-ranking: os cards mostram as posições #1 a #5 na ordem da api">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-162</span> <span class="slug">prod webapp login e feed</span><span class="test-desc">o web-app abre, aceita o login e mostra o feed com eventos</span></div>
+        <div class="test-title"><span class="ct">CT-265</span> <span class="slug">top eventos ranking</span><span class="test-desc">os cards mostram as posições #1 a #5 na ordem da API</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">11s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-163-prod-cms-login: o cms abre, aceita o login do admin e sai da tela de login">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-266-top-eventos-sem-abas: a seção top eventos não exibe as abas do feed">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-163</span> <span class="slug">prod cms login</span><span class="test-desc">o CMS abre, aceita o login do admin e sai da tela de login</span></div>
+        <div class="test-title"><span class="ct">CT-266</span> <span class="slug">top eventos sem abas</span><span class="test-desc">a seção Top eventos não exibe as abas do feed</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">9s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-164-prod-social-posts-guard: as rotas de social-posts existem e recusam acesso sem chave (401, não 404/500)">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-267-top-eventos-vazio: sem eventos em alta, mostra o estado vazio">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-164</span> <span class="slug">prod social posts guard</span><span class="test-desc">as rotas de social-posts existem e recusam acesso sem chave (401, não 404/500)</span></div>
+        <div class="test-title"><span class="ct">CT-267</span> <span class="slug">top eventos vazio</span><span class="test-desc">sem eventos em alta, mostra o estado vazio</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">10s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-165-prod-social-posts-chave: com a chave de integração, a lista de aprovados responde (somente leitura)">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-268-top-eventos-erro: falha da api mantém a tela com estado vazio">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-165</span> <span class="slug">prod social posts chave</span><span class="test-desc">com a chave de integração, a lista de aprovados responde (somente leitura)</span></div>
+        <div class="test-title"><span class="ct">CT-268</span> <span class="slug">top eventos erro</span><span class="test-desc">falha da API mantém a tela com estado vazio</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">10s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-166-prod-social-posts-admin: o admin lista a fila e os publicados (somente leitura)">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-269-top-eventos-curtir: curtir um evento do ranking atualiza o coração e o contador">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-166</span> <span class="slug">prod social posts admin</span><span class="test-desc">o admin lista a fila e os publicados (somente leitura)</span></div>
+        <div class="test-title"><span class="ct">CT-269</span> <span class="slug">top eventos curtir</span><span class="test-desc">curtir um evento do ranking atualiza o coração e o contador</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">11s</span>
     </div>
     
-  </li><li class="test test--pending" data-status="pending" data-search="pós-deploy - produção (somente leitura) ct-167-prod-cms-social-posts: a tela de social posts do cms abre e a aba publicados carrega sem erro">
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-270-top-eventos-compartilhar: compartilhar um evento do ranking abre o diálogo com o título">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
-        <div class="test-title"><span class="ct">CT-167</span> <span class="slug">prod cms social posts</span><span class="test-desc">a tela de social posts do CMS abre e a aba Publicados carrega sem erro</span></div>
+        <div class="test-title"><span class="ct">CT-270</span> <span class="slug">top eventos compartilhar</span><span class="test-desc">compartilhar um evento do ranking abre o diálogo com o título</span></div>
       </div>
-      <span class="test-status">Pendente</span>
-      <span class="test-duration">0ms</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">10s</span>
+    </div>
+    
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-271-top-eventos-voltar: voltar retorna para a home do feed">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-271</span> <span class="slug">top eventos voltar</span><span class="test-desc">Voltar retorna para a home do feed</span></div>
+      </div>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">11s</span>
+    </div>
+    
+  </li><li class="test test--passed" data-status="passed" data-search="top eventos ct-272-top-eventos-mobile: o ranking permanece visível sem overflow horizontal">
+    <div class="test-row">
+      <span class="test-dot" aria-hidden="true"></span>
+      <div class="test-main">
+        <div class="test-title"><span class="ct">CT-272</span> <span class="slug">top eventos mobile</span><span class="test-desc">o ranking permanece visível sem overflow horizontal</span></div>
+      </div>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">12s</span>
     </div>
     
   </li></ul>
@@ -2213,7 +2331,7 @@ a{color:inherit}
       <div class="spec-summary">
         <span class="badge badge--passed">Verde</span>
         <span class="spec-count"><b>9</b>/9 passaram</span>
-        <span class="spec-time">23s</span>
+        <span class="spec-time">24s</span>
       </div>
       <div class="spec-track" aria-hidden="true">
         <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
@@ -2226,7 +2344,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-001</span> <span class="slug">login sucesso lembrar me</span><span class="test-desc">login com sucesso marcando lembrar-me</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">7s</span>
+      <span class="test-duration">8s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="login ct-002-login-sucesso-sem-lembrar-me: login com sucesso sem marcar lembrar-me">
@@ -2246,7 +2364,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-003</span> <span class="slug">login falha campos vazios</span><span class="test-desc">login falha sem preencher nenhum campo</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">924ms</span>
+      <span class="test-duration">1s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="login ct-004-login-falha-apenas-email: login falha preenchendo apenas o email">
@@ -2266,7 +2384,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-005</span> <span class="slug">login falha apenas senha lembrar me</span><span class="test-desc">login falha preenchendo apenas a senha com lembrar-me</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">2s</span>
+      <span class="test-duration">950ms</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="login ct-006-login-sucesso-lembrar-me-mostrar-senha: login com sucesso + lembrar-me + mostrar senha">
@@ -2276,7 +2394,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-006</span> <span class="slug">login sucesso lembrar me mostrar senha</span><span class="test-desc">login com sucesso + lembrar-me + mostrar senha</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">3s</span>
+      <span class="test-duration">4s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="login ct-007-login-sucesso-mostrar-senha: login com sucesso + mostrar senha (sem lembrar-me)">
@@ -2296,7 +2414,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-008</span> <span class="slug">login falha campos vazios mostrar senha</span><span class="test-desc">login falha sem campos + mostrar senha</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">667ms</span>
+      <span class="test-duration">639ms</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="login ct-009-login-falha-apenas-email-mostrar-senha: login falha preenchendo apenas email + mostrar senha">
@@ -2322,7 +2440,7 @@ a{color:inherit}
       <div class="spec-summary">
         <span class="badge badge--passed">Verde</span>
         <span class="spec-count"><b>4</b>/4 passaram</span>
-        <span class="spec-time">28s</span>
+        <span class="spec-time">31s</span>
       </div>
       <div class="spec-track" aria-hidden="true">
         <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
@@ -2335,7 +2453,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-210</span> <span class="slug">visitante navega livre</span><span class="test-desc">sem login, as telas públicas abrem e a navegação entre elas não pede login</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">12s</span>
+      <span class="test-duration">16s</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="navegação do visitante ct-211-url-sem-prefixo-legado: nenhuma url nem link do app contém /public ou /private ao navegar">
@@ -2355,7 +2473,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-212</span> <span class="slug">rota privada vai para login</span><span class="test-desc">sem login, abrir uma rota que exige conta leva a /login</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">446ms</span>
+      <span class="test-duration">398ms</span>
     </div>
     
   </li><li class="test test--passed" data-status="passed" data-search="navegação do visitante ct-213-acao-privada-vai-para-login: sem login, curtir um evento pede conta e &quot;já tenho conta&quot; leva a /login">
@@ -2365,7 +2483,7 @@ a{color:inherit}
         <div class="test-title"><span class="ct">CT-213</span> <span class="slug">acao privada vai para login</span><span class="test-desc">sem login, curtir um evento pede conta e &quot;Já tenho conta&quot; leva a /login</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">8s</span>
+      <span class="test-duration">7s</span>
     </div>
     
   </li></ul>
@@ -2418,7 +2536,7 @@ a{color:inherit}
     </div>
     
   </li></ul>
-  </section><section class="spec card" data-spec data-status="failed">
+  </section><section class="spec card" data-spec data-status="passed">
     <header class="spec-head">
       <div class="spec-id">
         <span class="spec-avatar" aria-hidden="true">C</span>
@@ -2428,12 +2546,12 @@ a{color:inherit}
         </div>
       </div>
       <div class="spec-summary">
-        <span class="badge badge--failed">Com falha</span>
-        <span class="spec-count"><b>2</b>/3 passaram</span>
-        <span class="spec-time">41s</span>
+        <span class="badge badge--passed">Verde</span>
+        <span class="spec-count"><b>3</b>/3 passaram</span>
+        <span class="spec-time">29s</span>
       </div>
       <div class="spec-track" aria-hidden="true">
-        <span class="spec-fill spec-fill--failed" data-width="67" style="width:67%"></span>
+        <span class="spec-fill spec-fill--passed" data-width="100" style="width:100%"></span>
       </div>
     </header>
     <ul class="tests"><li class="test test--passed" data-status="passed" data-search="cadastro deve carregar a pagina de cadastro">
@@ -2453,32 +2571,19 @@ a{color:inherit}
         <div class="test-title"><span class="test-desc">Deve exibir o formulario de cadastro com todos os campos</span></div>
       </div>
       <span class="test-status">Passou</span>
-      <span class="test-duration">965ms</span>
+      <span class="test-duration">873ms</span>
     </div>
     
-  </li><li class="test test--failed" data-status="failed" data-search="cadastro deve realizar cadastro completo com sucesso">
+  </li><li class="test test--passed" data-status="passed" data-search="cadastro deve realizar cadastro completo com sucesso">
     <div class="test-row">
       <span class="test-dot" aria-hidden="true"></span>
       <div class="test-main">
         <div class="test-title"><span class="test-desc">Deve realizar cadastro completo com sucesso</span></div>
       </div>
-      <span class="test-status">Falhou</span>
-      <span class="test-duration">37s</span>
+      <span class="test-status">Passou</span>
+      <span class="test-duration">25s</span>
     </div>
-    <details class="test-error">
-        <summary>Ver detalhes do erro</summary>
-        <p>CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
-
-The request we sent was:
-
-Method: GET
-URL: https://www.sharklasers.com/inbox/weparty.test.0018
-
-No response was received within the timeout.
-
-https://on.cypress.io/request</p>
-        
-      </details>
+    
   </li></ul>
   </section>
     <div class="empty card" id="empty">
@@ -2488,15 +2593,15 @@ https://on.cypress.io/request</p>
   </section>
 
   <footer class="footer">
-    <span>Gerado em 26/10/2026, 16:50:02 · <b>weparty-automation</b></span>
-    <span>25 specs · 174 testes · Cypress</span>
+    <span>Gerado em 28/10/2026, 18:24:37 · <b>weparty-automation</b></span>
+    <span>26 specs · 184 testes · Cypress</span>
   </footer>
 </div>
 <canvas id="confetti" aria-hidden="true"></canvas>
 <script>
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  var passPercent = 63
+  var passPercent = 41
 
   function animateCount (el, target, duration) {
     var start = performance.now()
@@ -2577,7 +2682,7 @@ https://on.cypress.io/request</p>
       spec.style.display = specVisible ? '' : 'none'
       visible += specVisible
     })
-    visibleCount.textContent = 'Mostrando ' + visible + ' de ' + 174 + ' testes'
+    visibleCount.textContent = 'Mostrando ' + visible + ' de ' + 184 + ' testes'
     empty.classList.toggle('is-visible', visible === 0)
   }
 

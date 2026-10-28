@@ -270,7 +270,6 @@ a{color:inherit}
 .stat--pass{--tint:rgba(16,185,129,.12)}
 .stat--fail{--tint:rgba(239,68,68,.10)}
 .stat--pending{--tint:rgba(245,158,11,.12)}
-.stat--time{--tint:rgba(20,184,166,.14)}
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 18px;margin-bottom:20px;position:sticky;top:12px;z-index:20;backdrop-filter:blur(14px);background:rgba(255,255,255,.86)}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter{border:1px solid var(--line);background:#fff;color:var(--ink-soft);border-radius:999px;padding:9px 14px;font-family:var(--font-body);font-size:.78rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .18s ease}
@@ -405,7 +404,7 @@ a{color:inherit}
     <article class="stat card"><small>Total</small><b data-count="${total}">${total}</b><span>testes executados</span></article>
     <article class="stat stat--pass card"><small>Passaram</small><b data-count="${passed}">${passed}</b><span>${passPercent}% de sucesso</span></article>
     <article class="stat stat--fail card"><small>Falharam</small><b data-count="${failed}">${failed}</b><span>${failed ? 'revisar antes do deploy' : 'nenhuma falha'}</span></article>
-    <article class="stat stat--time card"><small>Duração</small><b>${esc(duration)}</b><span>${specs.length} specs · ${esc(dateLabel)}</span></article>
+    <article class="stat stat--pending card"><small>Pendentes</small><b data-count="${pending}">${pending}</b><span>${pending ? 'aguardando execução' : 'nenhum teste pendente'}</span></article>
   </section>
 
   <section class="toolbar card" aria-label="Filtros do relatório">

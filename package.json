@@ -9,6 +9,7 @@
     "cy:run": "node scripts/run-tests.js",
     "cy:run:login": "node scripts/run-tests.js --spec \"cypress/e2e/public/login.cy.js\"",
     "cy:run:feed": "node scripts/run-tests.js --spec \"cypress/e2e/private/feed.cy.js\"",
+    "cy:run:top-eventos": "node scripts/run-tests.js --spec \"cypress/e2e/private/top-eventos.cy.js\"",
     "cy:run:detalhes": "node scripts/run-tests.js --spec \"cypress/e2e/private/detalhes.cy.js\"",
     "cy:run:signup": "node scripts/run-tests.js --spec \"cypress/e2e/signup.cy.js\"",
     "test": "node scripts/run-tests.js",

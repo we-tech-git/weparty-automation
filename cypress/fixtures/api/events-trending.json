@@ -1,0 +1,98 @@
+{
+  "success": true,
+  "message": "Eventos em alta",
+  "data": {
+    "events": [
+      {
+        "id": "evt-top-001",
+        "name": "Baile Top Eventos E2E",
+        "description": "Evento fixo usado pelos testes automatizados da pagina Top eventos.",
+        "date": "2099-12-31T23:00:00.000Z",
+        "location": "Sao Paulo, SP",
+        "organizer": {
+          "id": "host-top-001",
+          "name": "Anfitria Top 1",
+          "avatar": ""
+        },
+        "confirmedCount": 120,
+        "interestedCount": 340,
+        "likesCount": 5,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-top-002",
+        "name": "Show Top Eventos E2E 2",
+        "description": "Evento de preenchimento do ranking Top eventos.",
+        "date": "2099-12-31T23:05:00.000Z",
+        "location": "Rio de Janeiro, RJ",
+        "organizer": {
+          "id": "host-top-002",
+          "name": "Anfitria Top 2",
+          "avatar": ""
+        },
+        "confirmedCount": 90,
+        "interestedCount": 210,
+        "likesCount": 4,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-top-003",
+        "name": "Feira Top Eventos E2E 3",
+        "description": "Evento de preenchimento do ranking Top eventos.",
+        "date": "2099-12-31T23:10:00.000Z",
+        "location": "Belo Horizonte, MG",
+        "organizer": {
+          "id": "host-top-003",
+          "name": "Anfitria Top 3",
+          "avatar": ""
+        },
+        "confirmedCount": 70,
+        "interestedCount": 160,
+        "likesCount": 3,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-top-004",
+        "name": "Encontro Top Eventos E2E 4",
+        "description": "Evento de preenchimento do ranking Top eventos.",
+        "date": "2099-12-31T23:15:00.000Z",
+        "location": "Curitiba, PR",
+        "organizer": {
+          "id": "host-top-004",
+          "name": "Anfitria Top 4",
+          "avatar": ""
+        },
+        "confirmedCount": 50,
+        "interestedCount": 110,
+        "likesCount": 2,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      },
+      {
+        "id": "evt-top-005",
+        "name": "Festival Top Eventos E2E 5",
+        "description": "Evento de preenchimento do ranking Top eventos.",
+        "date": "2099-12-31T23:20:00.000Z",
+        "location": "Porto Alegre, RS",
+        "organizer": {
+          "id": "host-top-005",
+          "name": "Anfitria Top 5",
+          "avatar": ""
+        },
+        "confirmedCount": 30,
+        "interestedCount": 80,
+        "likesCount": 1,
+        "isLiked": false,
+        "commentsCount": 0,
+        "eventInterests": []
+      }
+    ]
+  }
+}
