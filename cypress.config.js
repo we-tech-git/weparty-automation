@@ -39,6 +39,10 @@ module.exports = defineConfig({
       cmsUrl: process.env.ENV_CMS_URL || '',
       mailUrl: process.env.ENV_MAIL_URL || '',
       socialKey: process.env.ENV_SOCIAL_KEY || '',
+      // Flags dos links de divulgação (WEPARTY-239). Lidas do mesmo ambiente que sobe backend e CMS
+      // (env.mjs repassa process.env): os specs testam o caminho ligado ou o desligado conforme elas.
+      featureTrackingLinks: process.env.FEATURE_TRACKING_LINKS === 'true',
+      ffTrackingLinks: process.env.NEXT_PUBLIC_FF_TRACKING_LINKS === 'true',
     },
     setupNodeEvents(on, config) {
       on('before:browser:launch', (browser, launchOptions) => {
