@@ -48,7 +48,10 @@ describe('Navegação do visitante', () => {
 
     // Assert
     guestPage.assertRedirectedToLogin()
-    cy.url().should('match', /\/login$/)
+    // WEPARTY-239: o guard guarda o destino original em ?next= (para o ?ref= do link de divulgação não se perder)
+    cy.location('search').should((search) => {
+      expect(new URLSearchParams(search).get('next')).to.eq(ROUTES.PROFILE)
+    })
   })
 
   it('CT-213-acao-privada-vai-para-login: sem login, curtir um evento pede conta e "Já tenho conta" leva a /login', () => {
