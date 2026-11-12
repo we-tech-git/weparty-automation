@@ -6,6 +6,18 @@ class EventDetailsPage {
     cy.visit(`${ROUTES.EVENT}/${eventId}`)
   }
 
+  /** Abre o evento como quem chega por um link de divulgação (`?ref=`, WEPARTY-239). */
+  visitWithRef (eventId, ref) {
+    cy.visit(`${ROUTES.EVENT}/${eventId}?ref=${ref}`)
+  }
+
+  assertUrlKeepsRef (eventId, ref) {
+    cy.location({ timeout: EVENT_DETAILS_VISIBLE_TIMEOUT }).should((loc) => {
+      expect(loc.pathname).to.eq(`${ROUTES.EVENT}/${eventId}`)
+      expect(new URLSearchParams(loc.search).get('ref')).to.eq(ref)
+    })
+  }
+
   assertLoaded (eventTitle) {
     cy.contains('h1', eventTitle, { timeout: EVENT_DETAILS_VISIBLE_TIMEOUT }).should('be.visible')
   }

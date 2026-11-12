@@ -28,4 +28,5 @@ Object.assign(CMS_ROUTES, {
   HOME: '/cms/home',
   MY_EVENTS: '/cms/producer/my-events',
   ADMIN_USERS: '/cms/admin/users',
+  EDIT_EVENT: '/cms/producer/edit-event',
 })

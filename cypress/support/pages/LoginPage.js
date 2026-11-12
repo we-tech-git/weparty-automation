@@ -43,6 +43,15 @@ class LoginPage {
     cy.url({ timeout: LOGIN_REDIRECT_TIMEOUT }).should('include', ROUTES.FEED)
   }
 
+  /** Redirect de rota privada: `/login?next=<caminho original com query>` (WEPARTY-239). */
+  assertOnLoginWithNext (nextPath) {
+    cy.location({ timeout: LOGIN_REDIRECT_TIMEOUT }).should((loc) => {
+      expect(loc.pathname).to.eq(ROUTES.LOGIN)
+      expect(new URLSearchParams(loc.search).get('next')).to.eq(nextPath)
+    })
+    cy.getBySel('login-email', { timeout: LOGIN_FORM_VISIBLE_TIMEOUT }).should('be.visible')
+  }
+
   assertStayedOnLogin () {
     cy.url().should('include', ROUTES.LOGIN)
   }
