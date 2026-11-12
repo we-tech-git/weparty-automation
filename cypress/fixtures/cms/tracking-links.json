@@ -1,0 +1,4 @@
+[
+  { "id": "link-1", "label": "Instagram", "code": "abcd2345", "createdAt": "2026-11-09T12:00:00.000Z", "totalViews": 7 },
+  { "id": "link-2", "label": "WhatsApp", "code": "wxyz6789", "createdAt": "2026-11-08T12:00:00.000Z", "totalViews": 0 }
+]
